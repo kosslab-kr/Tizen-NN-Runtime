@@ -1,7 +1,7 @@
 # Tizen-NN-Framework
 
 
-## Member
+## Members
 - Sehyeon Jo (lazineer)
 - Jiyeon Park (timedilation)
 - taekyu Yun (yuntk)
