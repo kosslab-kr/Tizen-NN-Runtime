@@ -26,3 +26,20 @@
 
 * Arm NN(https://github.com/ARM-software/armnn)
 
+* nnfw 관련
+  * [Tizen 5.0 Public M1 release note](https://developer.tizen.org/tizen/release-notes/tizen-5.0-public-m1)
+    * 2018.05.31 릴리즈 (Experimental Release)
+    * ACL 기반의 CPU/GPU 가속 지원
+    * Android NN API 일부 호환
+    * TensorFlow Lite 일부 호환
+    * Inception V3 모델 지원
+  * nnfw README.md 내용
+    * 고성능의 on-device 신경망 추론 프레임워크
+    * 타이젠 또는 Smart Machine Platform(SMP)과 같은 타겟 플랫폼에서 CPU/GPU/NPU 등의 프로세스상에 주어진 NN 모델의 추론을 수행하는 고성능 on-device 신경망 제공
+    * experimental 버전으로서 Inception V3만 실행할 수 있는 제한된 기능만 제공
+    * 향후 릴리즈에서 이전 버전과의 호환성이 보장되지 않을 수 있음
+  * Inception V3
+    * 2014년 ILSVRC(ImageNet Large Scale Visual Recognition Challenge)에서 1등을 차지한 GoogLeNet(Inception V1)의 개량 모델
+    * V2에서 3x3 conv만 사용하도록 변경했으며 V3에서 여러가지 성능향상을 위한 기법을 적용함
+    * 구성도
+    ![Inception V3](https://cloud.google.com/tpu/docs/images/inceptionv3onc--oview.png)
