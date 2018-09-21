@@ -24,6 +24,7 @@
   
 * TensorFlow Lite Optimizing Converter
   * 학습된 tensorflow model을 tensorflow lite에서 사용하기 위한 컨버터
+  * https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/lite/toco/g3doc/python_api.md
   * [toco github page](http://blog.canapio.com/tag/FlatBuffer)
   * http://gmground.tistory.com/14
 
