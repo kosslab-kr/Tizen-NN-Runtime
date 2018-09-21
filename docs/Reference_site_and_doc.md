@@ -20,6 +20,7 @@
 
 * TensorFlow Lite(https://www.tensorflow.org/mobile/tflite/)
   * tflite 예제(https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/examples)
+  * [tensorflow lite 설명](https://jaehwant.github.io/machinelearning/2018/01/04/9/)
 
 * Arm Compute Library(https://developer.arm.com/technologies/compute-library)
   * armCL예제(https://github.com/ARM-software/ComputeLibrary/tree/master/examples)
