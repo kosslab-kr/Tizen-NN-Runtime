@@ -21,6 +21,7 @@
 * TensorFlow Lite(https://www.tensorflow.org/mobile/tflite/)
   * tflite 예제(https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/examples)
   * [tensorflow lite 설명](https://jaehwant.github.io/machinelearning/2018/01/04/9/)
+  * [Download pre-trained models](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/lite/g3doc/models.md)
   
 * TensorFlow Lite Optimizing Converter
   * 학습된 tensorflow model을 tensorflow lite에서 사용하기 위한 컨버터
