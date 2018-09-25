@@ -46,6 +46,10 @@
     * 타이젠 또는 Smart Machine Platform(SMP)과 같은 타겟 플랫폼에서 CPU/GPU/NPU 등의 프로세스상에 주어진 NN 모델의 추론을 수행하는 고성능 on-device 신경망 제공
     * experimental 버전으로서 Inception V3만 실행할 수 있는 제한된 기능만 제공
     * 향후 릴리즈에서 이전 버전과의 호환성이 보장되지 않을 수 있음
+    * NNFW Architecture
+    ![nnfw architecture](./fig/nnfw_architecture.png)
+    * NNFW Behavior
+    ![nnfw behavior](./fig/nnfw_behavior.png)
   * Inception V3
     * 2014년 ILSVRC(ImageNet Large Scale Visual Recognition Challenge)에서 1등을 차지한 GoogLeNet(Inception V1)의 개량 모델
     * V2에서 3x3 conv만 사용하도록 변경했으며 V3에서 여러가지 성능향상을 위한 기법을 적용함
