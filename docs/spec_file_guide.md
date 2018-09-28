@@ -46,6 +46,9 @@
 * __%defattr__
   * 기본 권한을 설정
   * %defattr(\<file_mode\>, \<user\>, \<group\>, \<dir_mode\>)
+* __%package__
+  * 서브-패키지를 생성하기 위해 사용된다.
+  * Name은 'tensorflow'이고 '%package devel'이라고 지정한다면 'tensorflow-devel.rpm'이란 이름의 파일이 생성된다.
 * __리눅스 명령어__
   * pushd, popd
     * 디렉토리경로를 스택에 보관(pushd)하고 인출(popd)하는 리눅스 명령어
