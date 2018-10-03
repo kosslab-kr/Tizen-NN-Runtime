@@ -18,22 +18,25 @@
 
 #include "frontend/wrapper/event.h"
 
+#define DEBUG 1
+#define debug_print(args ...) if (DEBUG) fprintf(stderr, args)
+
 int ANeuralNetworksEvent_wait(ANeuralNetworksEvent *event)
 {
-  printf("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_wait start /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_wait start /n");
   if (event == nullptr)
   {
-	printf("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_wait return UNEXPECTED_NULL /n");
+	debug_print("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_wait return UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
-  printf("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_wait return /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_wait return /n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
 void ANeuralNetworksEvent_free(ANeuralNetworksEvent *event)
 {
-  printf("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_free start /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_free start /n");
   delete event;
-  printf("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_free return /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_free return /n");
 }
