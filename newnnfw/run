@@ -1,0 +1,22 @@
+#!/bin/bash
+
+COMMAND=$1; shift
+
+if [[ -z "${COMMAND}" ]]; then
+  echo "USAGE: $0 [COMMAND] ..."
+  exit 255
+fi
+
+NNFW_PROJECT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+NNFW_COMMAND_RPATH="scripts/command"
+
+NNFW_COMMAND_FILE="${NNFW_PROJECT_PATH}/${NNFW_COMMAND_RPATH}/${COMMAND}"
+
+if [[ ! -f "${NNFW_COMMAND_FILE}" ]]; then
+  echo "ERROR: '${COMMAND}' is not supported"
+  exit 255
+fi
+
+export NNFW_PROJECT_PATH
+
+source "${NNFW_COMMAND_FILE}" "$@"

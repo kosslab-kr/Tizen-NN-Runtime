@@ -1,0 +1,6 @@
+--extra=+f
+--exclude=Product
+--exclude=tags
+--exclude=tests/framework/cache
+--exclude=tools/cross/rootfs
+--exclude=doxygen

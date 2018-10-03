@@ -1,0 +1,11 @@
+add/4D
+average_pool_2d/avgpool1
+average_pool_2d/avgpool1
+concat/concat1
+conv_2d/convolution1
+conv_2d/convolution2
+div/broadcast
+max_pool_2d/maxpool1
+max_pool_2d/maxpool2
+resize_bilinear
+softmax

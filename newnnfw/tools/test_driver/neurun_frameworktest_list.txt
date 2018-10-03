@@ -1,0 +1,10 @@
+average_pool_2d/avgpool1
+average_pool_2d/avgpool1
+conv_2d/convolution1
+conv_2d/convolution2
+max_pool_2d/maxpool1
+max_pool_2d/maxpool2
+softmax
+reshape/reshape1
+MODELS/inception_nonslim
+MODELS/inception_slim

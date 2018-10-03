@@ -1,0 +1,33 @@
+# Newly created files during docker run can have different ownership.
+# This may cause some problems, for example, some jenkins slaves or developers
+# can't remove built files due to lack of permission.
+# To address this issue, let's change owner of all files and subdirector
+# to owner of host directory.
+#
+# Parameters:
+#  $1 : host directory
+#  $2 : docker directory
+#
+# Requires following variables defined
+#   DOCKER_RUN_OPTS, DOCKER_ENV_VARS, DOCKER_VOLUMES, DOCKER_IMAGE_NAME 
+function restore_ownership() {
+    if [ -z "$1" ]
+    then
+        echo "Requires host path"
+        exit 1
+    fi
+    _HOST_DIR=$1
+
+    if [ -z "$2" ]
+    then
+        echo "Requires docker path"
+        exit 1
+    fi
+
+    _DOCKER_DIR=$2
+
+    _OWNER_UID=$(stat -c "%u" $_HOST_DIR)
+    _OWNER_GID=$(stat -c "%g" $_HOST_DIR)
+    CMD="chown -R $_OWNER_UID:$_OWNER_GID $_DOCKER_DIR"
+    docker run $DOCKER_RUN_OPTS $DOCKER_ENV_VARS $DOCKER_VOLUMES $DOCKER_IMAGE_NAME $CMD
+}

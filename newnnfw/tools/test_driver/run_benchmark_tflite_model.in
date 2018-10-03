@@ -1,0 +1,1 @@
+MODELS/inception_nonslim	--input_layer=Mul --input_layer_shape=1,299,299,3 --num_threads=1 --num_runs=1
