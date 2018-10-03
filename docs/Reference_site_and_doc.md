@@ -17,6 +17,10 @@
              https://review.tizen.org/gerrit/#/admin/projects/platform/upstream/armcl
 
   * gbs 빌드 실행 : ex)gbs build --include-all --arch armv7l
+  * Package 설치
+    * rpm -Uvh xxx.rpm
+  * Tizen Target Platform read/write remount
+    * mount -o rw,remount /
 
 * TensorFlow Lite(https://www.tensorflow.org/mobile/tflite/)
   * tflite 예제(https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/examples)
