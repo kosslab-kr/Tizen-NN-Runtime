@@ -24,16 +24,20 @@
 
 #include "graph/operand/Index.h"
 
+
+#define DEBUG 1
+#define debug_print(args ...) if (DEBUG) fprintf(stderr, args)
+
 //
 // NNAPI Implementation
 //
 int ANeuralNetworksExecution_create(ANeuralNetworksCompilation *compilation,
                                     ANeuralNetworksExecution **execution)
 {
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_create start /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_create start /n");
   if ((compilation == nullptr) || (execution == nullptr))
   {
-    printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_create return UNEXPECTED_NULL /n");
+    debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_create return UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
@@ -44,11 +48,11 @@ int ANeuralNetworksExecution_create(ANeuralNetworksCompilation *compilation,
   *execution = new (std::nothrow) ANeuralNetworksExecution{plan};
   if (*execution == nullptr)
   {
-    printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_create return OUT_OF_MEMORY /n");
+    debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_create return OUT_OF_MEMORY /n");
     return ANEURALNETWORKS_OUT_OF_MEMORY;
   }
 
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_create return /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_create return /n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
@@ -56,14 +60,14 @@ int ANeuralNetworksExecution_setInput(ANeuralNetworksExecution *execution, int32
                                       const ANeuralNetworksOperandType * /* type */,
                                       const void *buffer, size_t length)
 {
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInput start /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInput start /n");
   // Don't check type
   // Comment about ANeuralNetworksOperandType in NeuralNetworks.h:
   //  If the input or output is optional and omitted then it need not have a fully specified tensor
   //  operand type
   if ((execution == nullptr) || ((buffer == nullptr) && (length != 0)))
   {
-    printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInput return UNEXPECTED_NULL /n");
+    debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInput return UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
@@ -95,11 +99,11 @@ int ANeuralNetworksExecution_setInput(ANeuralNetworksExecution *execution, int32
   }
   else
   {
-    printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInput Not Supported Operand /n");
+    debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInput Not Supported Operand /n");
     throw std::runtime_error{"Not supported, yet"};
   }
 
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInput return /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInput return /n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
@@ -107,14 +111,14 @@ int ANeuralNetworksExecution_setOutput(ANeuralNetworksExecution *execution, int3
                                        const ANeuralNetworksOperandType * /* type */, void *buffer,
                                        size_t length)
 {
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutput start /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutput start /n");
   // Don't check type
   // Comment about ANeuralNetworksOperandType in NeuralNetworks.h:
   //  If the input or output is optional and omitted then it need not have a fully specified tensor
   //  operand type
   if ((execution == nullptr) || ((buffer == nullptr) && (length != 0)))
   {
-    printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutput return UNEXPECTED_NULL /n");
+    debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutput return UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
@@ -146,21 +150,21 @@ int ANeuralNetworksExecution_setOutput(ANeuralNetworksExecution *execution, int3
   }
   else
   {
-    printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutput Not Supported Operand /n");
+    debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutput Not Supported Operand /n");
     throw std::runtime_error{"Not supported, yet"};
   }
 
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutput return /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutput return /n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
 int ANeuralNetworksExecution_startCompute(ANeuralNetworksExecution *execution,
                                           ANeuralNetworksEvent **event)
 {
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_startCompute start /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_startCompute start /n");
   if ((execution == nullptr) || (event == nullptr))
   {
-    printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_startCompute return UNEXPECTED_NULL /n");
+    debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_startCompute return UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
@@ -168,7 +172,7 @@ int ANeuralNetworksExecution_startCompute(ANeuralNetworksExecution *execution,
   *event = new (std::nothrow) ANeuralNetworksEvent{};
   if (*event == nullptr)
   {
-    printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_startCompute return OUT_OF_MEMORY /n");
+    debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_startCompute return OUT_OF_MEMORY /n");
     return ANEURALNETWORKS_OUT_OF_MEMORY;
   }
 
@@ -214,13 +218,13 @@ int ANeuralNetworksExecution_startCompute(ANeuralNetworksExecution *execution,
     }
   }
 
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_startCompute return /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_startCompute return /n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
 void ANeuralNetworksExecution_free(ANeuralNetworksExecution * /* execution */)
 {
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_free called /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_free called /n");
 }
 
 int ANeuralNetworksExecution_setInputFromMemory(ANeuralNetworksExecution *execution,
@@ -229,15 +233,15 @@ int ANeuralNetworksExecution_setInputFromMemory(ANeuralNetworksExecution *execut
                                                 const ANeuralNetworksMemory *memory,
                                                 size_t /* offset */, size_t /* length */)
 {
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInputFromMemory start /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInputFromMemory start /n");
   if ((execution == nullptr) || (memory == nullptr))
   {
-    printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInputFromMemory return UNEXPECTED_NULL /n");
+    debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInputFromMemory return UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
   // NYI
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInputFromMemory return /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setInputFromMemory return /n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
@@ -247,14 +251,14 @@ int ANeuralNetworksExecution_setOutputFromMemory(ANeuralNetworksExecution *execu
                                                  const ANeuralNetworksMemory *memory,
                                                  size_t /* offset */, size_t /* length */)
 {
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutputFromMemory start /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutputFromMemory start /n");
   if ((execution == nullptr) || (memory == nullptr))
   {
-    printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutputFromMemory return UNEXPECTED_NULL /n");
+    debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutputFromMemory return UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
   // NYI
-  printf("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutputFromMemory return /n");
+  debug_print("nnfw/runtimes/neurun/src/frontend/execution.cc -----> ANeuralNetworksExecution_setOutputFromMemory return /n");
   return ANEURALNETWORKS_NO_ERROR;
 }
