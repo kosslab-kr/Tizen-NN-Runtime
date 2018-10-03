@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 #include <NeuralNetworks.h>
 #include <NeuralNetworksEx.h>
 
@@ -36,32 +35,42 @@
 
 int ANeuralNetworksModel_create(ANeuralNetworksModel **model)
 {
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_create start /n");
   if (model == nullptr)
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_create return ANEURALNETWORKS_UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
   *model = new (std::nothrow) ANeuralNetworksModel{};
   if (*model == nullptr)
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_create return ANEURALNETWORKS_OUT_OF_MEMORY/n");
     return ANEURALNETWORKS_OUT_OF_MEMORY;
   }
-
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_create return/n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
-void ANeuralNetworksModel_free(ANeuralNetworksModel *model) { delete model; }
+void ANeuralNetworksModel_free(ANeuralNetworksModel *model) {
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_free start/n");
+  delete model;
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_free return/n");
+}
 
 int ANeuralNetworksModel_addOperand(ANeuralNetworksModel *model,
                                     const ANeuralNetworksOperandType *type)
 {
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperand start/n");
   if ((model == nullptr) || (type == nullptr))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_free return ANEURALNETWORKS_UNEXPECTED_NULL/n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
   if (model->isFinished())
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_free return ANEURALNETWORKS_BAD_STATE/n");
     return ANEURALNETWORKS_BAD_STATE;
   }
 
@@ -73,16 +82,19 @@ int ANeuralNetworksModel_addOperand(ANeuralNetworksModel *model,
   {
     if (!(type->scale > 0.0f))
     {
+      printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_free return ANEURALNETWORKS_BAD_DATA/n");
       return ANEURALNETWORKS_BAD_DATA;
     }
 
     if ((type->zeroPoint < 0) || (type->zeroPoint > 255))
     {
+      printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_free return ANEURALNETWORKS_BAD_DATA/n")
       return ANEURALNETWORKS_BAD_DATA;
     }
   }
   else if ((type->scale != 0.0f) || (type->zeroPoint != 0))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_free return ANEURALNETWORKS_BAD_DATA/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
 
@@ -91,6 +103,7 @@ int ANeuralNetworksModel_addOperand(ANeuralNetworksModel *model,
       ((type->type == ANEURALNETWORKS_FLOAT32) || (type->type == ANEURALNETWORKS_INT32) ||
        (type->type == ANEURALNETWORKS_UINT32)))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_free return ANEURALNETWORKS_BAD_DATA/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
 
@@ -108,7 +121,7 @@ int ANeuralNetworksModel_addOperand(ANeuralNetworksModel *model,
   // NOTE We do NOT allocate CLTensor here as we do not how to interpret this one.
   //      TensorFlow Lite may interpret a rank-4 tensor either as a feature map (with batch) or
   //      a convolution kernel.
-
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_free return/n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
@@ -117,33 +130,39 @@ int ANeuralNetworksModel_setOperandValue(ANeuralNetworksModel *model, int32_t in
 {
   if ((model == nullptr) || ((buffer == nullptr) && (length != 0)))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValue return ANEURALNETWORKS_UNECPECTED_NULL/n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
   if (model->isFinished())
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValue return ANEURALNETWORKS_BAD_STATE/n");
     return ANEURALNETWORKS_BAD_STATE;
   }
 
   // Negative index value is not allowed
   if (index < 0)
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValue return ANEURALNETWORKS_BAD_DATA/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
   const neurun::graph::operand::Index ind{static_cast<uint32_t>(index)};
 
   if (!model->deref().operands().exist(ind))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValue return ANEURALNETWORKS_BAD_STATE/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
 
   auto &obj = model->deref().operands().at(ind);
   if (obj.operandSize() != length)
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValue return ANEURALNETWORKS_BAD_DATA/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
   if (!obj.setAsConstant())
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValue return ANEURALNETWORKS_BAD_DATA/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
 
@@ -151,7 +170,7 @@ int ANeuralNetworksModel_setOperandValue(ANeuralNetworksModel *model, int32_t in
 
   model->deref().setOperandValue(
       ind, nnfw::make_unique<CachedData>(reinterpret_cast<const uint8_t *>(buffer), length));
-
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValue return/n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
@@ -159,35 +178,42 @@ int ANeuralNetworksModel_setOperandValueFromMemory(ANeuralNetworksModel *model, 
                                                    const ANeuralNetworksMemory *memory,
                                                    size_t offset, size_t length)
 {
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValueFromMemory start/n");
   if ((model == nullptr) || (memory == nullptr))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValueFromMemory return ANEURALNETWORKS_UNEXPECTED_NULL/n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
   if (model->isFinished())
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValueFromMemory return ANEURALNETWORKS_BAD_STATE/n");
     return ANEURALNETWORKS_BAD_STATE;
   }
 
   // Negative index value is not allowed
   if (index < 0)
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValueFromMemory return ANEURALNETWORKS_BAD_DATA/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
   const neurun::graph::operand::Index ind{static_cast<uint32_t>(index)};
 
   if (!model->deref().operands().exist(ind))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValueFromMemory return ANEURALNETWORKS_BAD_DATA/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
 
   auto &obj = model->deref().operands().at(ind);
   if ((obj.operandSize() != length) || (memory->size() < (offset + length)))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValueFromMemory return ANEURALNETWORKS_BAD_DATA/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
   if (!obj.setAsConstant())
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValueFromMemory return ANEURALNETWORKS_BAD_DATA/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
 
@@ -196,7 +222,7 @@ int ANeuralNetworksModel_setOperandValueFromMemory(ANeuralNetworksModel *model, 
   model->deref().setOperandValue(
       ind, nnfw::make_unique<ExternalData>(
                reinterpret_cast<const uint8_t *>(memory->base() + offset), length));
-
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_setOperandValueFromMemory return/n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
@@ -205,13 +231,16 @@ int ANeuralNetworksModel_addOperation(ANeuralNetworksModel *model,
                                       const uint32_t *inputs, uint32_t outputCount,
                                       const uint32_t *outputs)
 {
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperation start/n");
   if ((model == nullptr) || (inputs == nullptr) || (outputs == nullptr))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperation return ANEURALNETWORKS_UNEXPECTED_NULL/n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
   if (model->isFinished())
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperation return ANEURALNETWORKS_BAD_STATE/n");
     return ANEURALNETWORKS_BAD_STATE;
   }
 
@@ -222,6 +251,7 @@ int ANeuralNetworksModel_addOperation(ANeuralNetworksModel *model,
 
     if (!obj.setAsOperationOutput())
     {
+      printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperation return ANEURALNETWORKS_BAD_DATA/n");
       return ANEURALNETWORKS_BAD_DATA;
     }
   }
@@ -331,7 +361,7 @@ int ANeuralNetworksModel_addOperation(ANeuralNetworksModel *model,
     default:
       throw std::runtime_error{"Not supported operation"};
   };
-
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperation return/n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
@@ -340,13 +370,16 @@ int ANeuralNetworksModel_addOperationEx(ANeuralNetworksModel *model,
                                         const uint32_t *inputs, uint32_t outputCount,
                                         const uint32_t *outputs)
 {
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperationEx start/n");
   if ((model == nullptr) || (inputs == nullptr) || (outputs == nullptr))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperationEx return ANEURALNETWORKS_UNEXPECTED_NULL/n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
   if (model->isFinished())
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperationEx return ANEURALNETWORKS_BAD_STATE/n");
     return ANEURALNETWORKS_BAD_STATE;
   }
 
@@ -357,6 +390,7 @@ int ANeuralNetworksModel_addOperationEx(ANeuralNetworksModel *model,
 
     if (!obj.setAsOperationOutput())
     {
+      printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperationEx return ANEURALNETWORKS_BAD_DATA/n");
       return ANEURALNETWORKS_BAD_DATA;
     }
   }
@@ -364,6 +398,7 @@ int ANeuralNetworksModel_addOperationEx(ANeuralNetworksModel *model,
   // Workaround: to avoid compile error by unused-parameter, use inputCount
   if (inputCount == 0)
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperationEx return ANEURALNETWORKS_BAD_DATA/n");
     return ANEURALNETWORKS_BAD_DATA;
   }
 
@@ -372,19 +407,23 @@ int ANeuralNetworksModel_addOperationEx(ANeuralNetworksModel *model,
     default:
       throw std::runtime_error{"Not supported operation"};
   }
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_addOperationEx return/n");
 }
 
 int ANeuralNetworksModel_identifyInputsAndOutputs(ANeuralNetworksModel *model, uint32_t inputCount,
                                                   const uint32_t *inputs, uint32_t outputCount,
                                                   const uint32_t *outputs)
 {
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_indentifyInputsAndoutputs start/n");
   if ((model == nullptr) || (inputs == nullptr) || (outputs == nullptr))
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_indentifyInputsAndoutputs return ANEURALNETWORKS_UNEXPECTED_NULL/n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
   if (model->isFinished())
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_indentifyInputsAndoutputs return ANEURALNETWORKS_BAD_STATE/n");
     return ANEURALNETWORKS_BAD_STATE;
   }
 
@@ -403,6 +442,7 @@ int ANeuralNetworksModel_identifyInputsAndOutputs(ANeuralNetworksModel *model, u
     auto &obj = model->deref().operands().at(ind);
     if (!obj.setAsModelInput())
     {
+      printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_indentifyInputsAndoutputs return ANEURALNETWORKS_BAD_DATA/n");
       return ANEURALNETWORKS_BAD_DATA;
     }
   }
@@ -416,19 +456,22 @@ int ANeuralNetworksModel_identifyInputsAndOutputs(ANeuralNetworksModel *model, u
     // Model output cannot become model input
     if (obj.isModelInput())
     {
+      printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_indentifyInputsAndoutputs return ANEURALNETWORKS_BAD_DATA/n");
       return ANEURALNETWORKS_BAD_DATA;
     }
   }
-
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_indentifyInputsAndoutputs return/n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
 int ANeuralNetworksModel_finish(ANeuralNetworksModel *model)
 {
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_finish start/n");
   if (model == nullptr)
   {
+    printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_finish return ANEURALNETWORKS_UNEXPECTED_NULL/n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
-
+  printf("nnfw/runtimes/neurun/frontend/model.cc -----> ANeuralNetworksModel_finish return/n");
   return model->finish();
 }
