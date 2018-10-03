@@ -27,8 +27,10 @@
 int ANeuralNetworksCompilation_create(ANeuralNetworksModel *model,
                                       ANeuralNetworksCompilation **compilation)
 {
+  printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_create start /n");
   if ((model == nullptr) || (compilation == nullptr))
   {
+    printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_create return UNEXPECTED_NULL/n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
@@ -39,35 +41,45 @@ int ANeuralNetworksCompilation_create(ANeuralNetworksModel *model,
   *compilation = new (std::nothrow) ANeuralNetworksCompilation(internal);
   if (*compilation == nullptr)
   {
+    printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_create return OUT_OF_MEMORY/n");
     return ANEURALNETWORKS_OUT_OF_MEMORY;
   }
 
+  printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_create return/n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
 int ANeuralNetworksCompilation_finish(ANeuralNetworksCompilation *compilation)
 {
+  printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_finish start /n");
   if (compilation == nullptr)
   {
+    printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_finish return UNEXPECTED_NULL/n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
+  printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_finish return/n");
   return compilation->finish();
 }
 
 void ANeuralNetworksCompilation_free(ANeuralNetworksCompilation *compilation)
 {
+  printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_free start /n");
   delete compilation;
+  printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_free return/n");
 }
 
 int ANeuralNetworksCompilation_setPreference(ANeuralNetworksCompilation *compilation,
                                              int32_t /* preference */)
 {
+  printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_setPreference start /n");
   if (compilation == nullptr)
   {
+    printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_setPreference return UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
   // NYi
+  printf("nnfw/runtimes/neurun/src/frontend/compilation.cc -----> ANeuralNetworksCompilation_setPreference return /n");
   return ANEURALNETWORKS_NO_ERROR;
 }

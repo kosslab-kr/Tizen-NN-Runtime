@@ -20,12 +20,20 @@
 
 int ANeuralNetworksEvent_wait(ANeuralNetworksEvent *event)
 {
+  printf("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_wait start /n");
   if (event == nullptr)
   {
+	printf("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_wait return UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
+  printf("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_wait return /n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
-void ANeuralNetworksEvent_free(ANeuralNetworksEvent *event) { delete event; }
+void ANeuralNetworksEvent_free(ANeuralNetworksEvent *event)
+{
+  printf("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_free start /n");
+  delete event;
+  printf("nnfw/runtimes/neurun/src/frontend/event.cc -----> ANeuralNetworksEvent_free return /n");
+}

@@ -25,8 +25,10 @@
 int ANeuralNetworksMemory_createFromFd(size_t size, int protect, int fd, size_t offset,
                                        ANeuralNetworksMemory **memory)
 {
+  printf("nnfw/runtimes/neurun/src/frontend/memory.cc -----> ANeuralNetworksMemory_createFromFd start /n");
   if (memory == nullptr)
   {
+    printf("nnfw/runtimes/neurun/src/frontend/memory.cc -----> ANeuralNetworksMemory_createFromFd return UNEXPECTED_NULL /n");
     return ANEURALNETWORKS_UNEXPECTED_NULL;
   }
 
@@ -35,11 +37,18 @@ int ANeuralNetworksMemory_createFromFd(size_t size, int protect, int fd, size_t 
       nnfw::make_unique<ANeuralNetworksMemory>(size, protect, fd, offset);
   if (memory_ptr == nullptr)
   {
+    printf("nnfw/runtimes/neurun/src/frontend/memory.cc -----> ANeuralNetworksMemory_createFromFd return OUT_OF_MEMORY /n");
     return ANEURALNETWORKS_OUT_OF_MEMORY;
   }
   *memory = memory_ptr.release();
 
+  printf("nnfw/runtimes/neurun/src/frontend/memory.cc -----> ANeuralNetworksMemory_createFromFd return /n");
   return ANEURALNETWORKS_NO_ERROR;
 }
 
-void ANeuralNetworksMemory_free(ANeuralNetworksMemory *memory) { delete memory; }
+void ANeuralNetworksMemory_free(ANeuralNetworksMemory *memory)
+{
+  printf("nnfw/runtimes/neurun/src/frontend/memory.cc -----> ANeuralNetworksMemory_free start /n");
+  delete memory;
+  printf("nnfw/runtimes/neurun/src/frontend/memory.cc -----> ANeuralNetworksMemory_free return /n");
+}
