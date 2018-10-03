@@ -17,5 +17,4 @@
 * Test
   * xorGate.lite와 같은 경로에서 실행
   * test
-  
-    ![test_xor](./fig/test_xor.png)
+    * ![test_xor](./fig/test_xor.png)
