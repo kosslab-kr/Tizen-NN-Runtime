@@ -1,4 +1,4 @@
-Name: cvcam
+Name: cam
 Version: 0.0.1
 Release: 1
 License: Apache-2.0

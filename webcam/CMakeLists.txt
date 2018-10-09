@@ -9,7 +9,6 @@ link_directories(${OPENCV_LIBRARY_DIRS})
 add_definitions(${OPENCV_CFLAGS_OTHER})
 set(LIBS ${LIBS} ${OPENCV_LIBRARIES})
 
-
 SET(SRCS
 	src/cam.cpp
 )
