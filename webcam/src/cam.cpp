@@ -4,7 +4,7 @@
 int main()
 {
     std::cout << "OpenCV Version : " << CV_VERSION << std::endl;
-//    cv::Mat img;
+    cv::Mat img;
 //    cv::namedWindow("EXAMPLE02", 1);
     cv::VideoCapture cap;
  
@@ -12,7 +12,11 @@ int main()
                      // USB 카메라는 cap.open(0);
 
 if (cap.isOpened())
+{
     std::cout << "cap opened" << std::endl;
+    cap >> img;
+    imwrite("img.jpg", img);
+}
 else
     std::cout << "cap not opened" << std::endl;
 
