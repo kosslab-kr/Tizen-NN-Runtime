@@ -14,5 +14,6 @@
   * ./sdb shell [command]
   * 예> ./sdb shell mount -o rw,remount /
 * 파일 전송
-  * write 가능하도록 remount가 선행되어야 함
+  * ./sdb root on
+  * ./sdb shell mount -o rw,remount /
   * ./sdb push [file_name] [target_path]
