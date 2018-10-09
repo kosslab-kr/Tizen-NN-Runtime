@@ -7,6 +7,8 @@ Packager: lazineer@gmail.com
 Group: Application
 Source: %{name}-%{version}.tar.gz
 BuildRequires: cmake
+#BuildRequires: gtk+-2.0
+BuildRequires: pkgconfig(opencv)
 
 %description
 Platform Project
