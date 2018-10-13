@@ -9,15 +9,15 @@
   * PATH 업데이트 : sudo source /etc/environment
 * host와 target(odroid)가 동일 AP를 사용하는 상태에서,
 * target 접속
-  * ./sdb connect [target_ip]
+  * sdb connect [target_ip]
 * 연결 확인
-  * ./sdb devices
+  * sdb devices
 * target shell 접속
-  * ./sdb shell
+  * sdb shell
 * target shell에 들어가지 않고 명령을 실행할 수 있다.
-  * ./sdb shell [command]
-  * 예> ./sdb shell mount -o rw,remount /
+  * sdb shell [command]
+  * 예> sdb shell mount -o rw,remount /
 * 파일 전송
-  * ./sdb root on
-  * ./sdb shell mount -o rw,remount /
-  * ./sdb push [file_name] [target_path]
+  * sdb root on
+  * sdb shell mount -o rw,remount /
+  * sdb push [file_name] [target_path]
