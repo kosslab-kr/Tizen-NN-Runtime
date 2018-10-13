@@ -27,4 +27,5 @@
     ```
   * "c   - Connect" 선택 후 AP명, 암호 입력
   * "a   - Get Connected AP" 선택하면 연결된 AP 확인 가능
+  * "0   - wifi_manager_test" 
 * 이후에는 reboot 후에도 wifi가 자동적으로 활성화되며 기존에 연결했던 AP에 자동으로 연결된다.
