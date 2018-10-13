@@ -16,16 +16,22 @@ $ git clone https://review.tizen.org/gerrit/#/admin/projects/platform/upstream/t
 
 1. 빌드하기
 
-   * Tizen 5.0에서 빌드
+   * Tizen 5.0 
 
    ```
-   $ gbs build -A armv7l -P unified_standard
+   $ gbs build –A armv7l –P unified_standard
    ```
 
-   * Tizen 4.0에서 빌드
+   - Tizen 4.0
 
    ```
-   $ gbs build -A armv7l -P 4.0-unified_standard
+   $ gbs build –A armv7l –P 4.0-unified_standard
+   ```
+
+   - Single build시 추가해야 할 옵션
+
+   ```
+   --define 'tflite_single_build 1'
    ```
 
 2. rpm 파일 확인하기

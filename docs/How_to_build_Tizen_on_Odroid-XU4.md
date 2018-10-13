@@ -459,7 +459,7 @@
    ```
 
 
-#### Micro SD 에 부트로더 다운로드
+#### Micro SD로 부팅하기
 
 1. 데스크탑에 Micro SD 연결 후 device node 확인
 
@@ -506,4 +506,132 @@ $ sudo ./sd_fusing_xu4.sh -d /dev/sdX -b bl1.bin.hardkernel bl2.bin.hardkernel.1
 ```
 
 3. 오드로이드에 Micro SD 카드 연결, 부트 모드를 SD로 선택
-4. 전원 연결
+
+4. 데스크탑과 Serial Console port 연결
+
+   - `minicom` 설치
+
+   ```
+   $ sudo apt-get install minicom
+   ```
+
+   - `dialout` 그룹에 자신을 추가
+
+   ```
+   $ sudo vi /etc/group
+   ```
+
+   - `minicom` 사용하기 (`/dev/ttyUSB1` 은 달라질 수 있음)
+
+   ```
+   $ minicom --baudrate 115200 --device /dev/ttyUSB1
+   ```
+
+   - `CTRL-a z o` > `Serial port setup`을 사용해 dialog에 진입
+   - Baud는 `115200-8N1`이어야 함
+   - communication을 가능하게 하기 위해 configuration`Hardware Flow Control`을 `No`로
+
+   - Mac이나 Windows에서 연결하는 경우 드라이버를 설치해야 함
+
+     https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
+
+    - Windows는 putty 사용
+
+5. 전원 연결
+
+6. root로 로그인
+
+   - pwd `tizen`
+
+#### 부트 후
+
+- 팬 스피드 낮추기(0~255)
+
+```
+$ echo "100" > /sys/devices/platform/pwm-fan/hwmon/hwmon0/pwm1
+```
+
+​	재부팅 때마다 초기화 되므로 다시 설정해야 함
+
+- Root file system 확장하기
+
+  Root FS는 3G로 초기화. 파일을 설치하기에 충분하지 않을 수 있음.
+
+  이를 해결하기 위해서는 Tizen root shell에서
+
+  ```
+  mount -o remount,rw /
+  resize2fs /dev/mmcblk0p2
+  sync
+  ```
+
+  재부팅
+
+  ```
+  reboot
+  ```
+
+  `df`로 확인
+
+- Wide console
+
+```
+stty cols 200
+```
+
+- Target Device의 IP 주소 설정하기
+
+  `connmanctl` 사용(Target Device에서)
+
+  Step 1. 서비스 네임 받기
+
+  - 이더넷 케이블 연결
+
+  ```
+  $ connmanctl services
+  ```
+
+  - 아래와 같은 것이 출력
+
+  ```
+  *AR Wired			ethernet_1a43230d5dfa_cable
+  ```
+
+  Step 2. IP 주소를 설정하기 위해 `config` 사용
+
+  ```
+  $ connmanctl config ethernet_1a43230d5dfa_cable --ipv4 manual 10.113.XXX.YYY 255.255.255.0 10.113.XXX.1
+  
+  $ connmanctl config ethernet_1a43230d5dfa_cable --nameservers 10.32.192.11 10.32.193.11
+  ```
+
+  XXX.YYY는 target board에 대한 자신의 주소
+
+
+
+#### SDB로 연결하기
+
+```
+$ sdb connect 10.113.XXX.YYY
+```
+
+아래와 같은 것이 출력
+
+```
+\* Server is not running. Start it now on port 26099 *
+\* Server has started successfully *
+connecting to 10.113.xxx.yyy:26101 ...
+connected to 10.113.xxx.yyy:26101
+```
+
+`sdb devices`
+
+```
+$ sdb devices
+
+List of devices attached 
+
+10.113.xxx.yyy:26101    device      xu3
+```
+
+xu3 이미지와 같은 것을 사용했으므로 xu3이라 출력됨
