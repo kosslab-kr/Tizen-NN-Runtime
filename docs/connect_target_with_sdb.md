@@ -3,6 +3,10 @@
   * [download tizen-studio](https://developer.tizen.org/development/tizen-studio/download)
   * [installing-tizen-studio](https://developer.tizen.org/development/tizen-studio/download/installing-tizen-studio)
   * 설치하면 tizen-studio/tools에 sdb가 존재한다.
+* sdb 가 있는 폴더를 PATH 에 등록
+  * sudo gedit /etc/environment
+  * environment 파일 내용 수정
+    PATH="/home/<ID>/tizen-studio/tools/:~~~<기존 PATH>
 * host와 target(odroid)가 동일 AP를 사용하는 상태에서,
 * target 접속
   * ./sdb connect [target_ip]
