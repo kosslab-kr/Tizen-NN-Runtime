@@ -54,7 +54,7 @@ int main()
     std::cout << "OpenCV Version : " << CV_VERSION << std::endl;
     cv::Mat first_frame, frame, resized_frame;
     int original_width, original_height;
-    cv::namedWindow("EXAMPLE02");
+    //cv::namedWindow("EXAMPLE02");
     cv::VideoCapture cap;
     
     cap.open(1);
@@ -92,14 +92,14 @@ int main()
         float* output = interpreter->typed_output_tensor<float>(0);
         printf("output = %f\n", output[0]);
         
-        cv::imshow("EXAMPLE02", frame);
+        //cv::imshow("EXAMPLE02", frame);
         if(cv::waitKey(10) == 27)
         {
             break;
         }
     }
     
-    cv::destroyWindow("EXAMPLE02");
+    //cv::destroyWindow("EXAMPLE02");
     
     return 0;
 }
