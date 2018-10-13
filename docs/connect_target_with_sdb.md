@@ -7,6 +7,7 @@
   * sudo gedit /etc/environment
   * environment 파일 내용 수정
     PATH="/home/<ID>/tizen-studio/tools/:~~~<기존 PATH>
+  * PATH 업데이트 : sudo source /etc/environment
 * host와 target(odroid)가 동일 AP를 사용하는 상태에서,
 * target 접속
   * ./sdb connect [target_ip]
