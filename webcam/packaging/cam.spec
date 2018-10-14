@@ -9,6 +9,7 @@ Source: %{name}-%{version}.tar.gz
 BuildRequires: cmake
 #BuildRequires: gtk+-2.0
 BuildRequires: pkgconfig(opencv)
+BuildRequires: tensorflow-lite-devel
 
 %description
 Platform Project

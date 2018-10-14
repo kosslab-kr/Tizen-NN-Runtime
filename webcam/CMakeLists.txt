@@ -12,11 +12,13 @@ FOREACH (flag ${APP_PKGS_CFLAGS})
 ENDFOREACH(flag)
 
 SET(SRCS
-	src/cam.cpp
+#	src/cam.cpp
+        src/cam_tflite_test.cpp
 )
 
 ADD_EXECUTABLE(cam ${SRCS})
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${APP_PKGS_LDFLAGS})
+TARGET_LINK_LIBRARIES(${PROJECT_NAME} tensorflow-lite pthread dl)
 
 INSTALL(TARGETS ${PROJECT_NAME} DESTINATION ${INSTALL_EXEC_PREFIX})
