@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# NOTE 'run' sets NNFW_PROJECT_PATH and invokes this script
+
+# TODO Support command-line options
+# TODO Implement build steps inside this script
+make -C "${NNFW_PROJECT_PATH}"

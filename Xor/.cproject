@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="org.tizen.nativeide.config.sbi.gcc45.platform.debug.1904742223">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.tizen.nativeide.config.sbi.gcc45.platform.debug.1904742223" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.tizen.nativeide.buildArtefactType.platform" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.tizen.nativeide.buildArtefactType.platform" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;" id="org.tizen.nativeide.config.sbi.gcc45.platform.debug.1904742223" name="Debug" parent="org.tizen.nativeide.config.sbi.gcc45.platform.debug">
+					<folderInfo id="org.tizen.nativeide.config.sbi.gcc45.platform.debug.1904742223." name="/" resourcePath="">
+						<toolChain id="org.tizen.nativeide.toolchain.sbi.gcc45.platform.debug.1510310351" name="Tizen Platform Toolchain" superClass="org.tizen.nativeide.toolchain.sbi.gcc45.platform.debug">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="org.tizen.nativeide.target.sbi.gnu.platform.base.1660264304" osList="linux,win32" superClass="org.tizen.nativeide.target.sbi.gnu.platform.base"/>
+							<builder autoBuildTarget="all" buildPath="${workspace_loc:/Helloworld}/" enableAutoBuild="true" id="org.tizen.nativeide.target.sbi.gcc45.platform.builder.579183669" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Tizen Platform Builder" superClass="org.tizen.nativeide.target.sbi.gcc45.platform.builder"/>
+							<tool id="org.tizen.nativeide.tool.sbi.gnu.archiver.platform.base.1239444358" name="Archiver" superClass="org.tizen.nativeide.tool.sbi.gnu.archiver.platform.base"/>
+							<tool command="g++" id="org.tizen.nativeide.tool.sbi.gnu.cpp.compiler.platform.base.657179119" name="C++ Compiler" superClass="org.tizen.nativeide.tool.sbi.gnu.cpp.compiler.platform.base">
+								<option id="sbi.gnu.cpp.compiler.option.381744955" name="Tizen-Target" superClass="sbi.gnu.cpp.compiler.option" valueType="userObjs">
+									<listOptionValue builtIn="false" value="mobile-2.4-device.platform_gcc.armel.platform"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.include.paths.1685147420" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/lazineer/tensorflow"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.142491862" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool command="gcc" id="org.tizen.nativeide.tool.sbi.gnu.c.compiler.platform.base.1525739991" name="C Compiler" superClass="org.tizen.nativeide.tool.sbi.gnu.c.compiler.platform.base">
+								<option id="sbi.gnu.c.compiler.option.669175795" name="Tizen-Target" superClass="sbi.gnu.c.compiler.option" valueType="userObjs">
+									<listOptionValue builtIn="false" value="mobile-2.4-device.platform_gcc.armel.platform"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1318245561" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="org.tizen.nativeide.tool.sbi.gnu.c.linker.platform.base.947518684" name="C Linker" superClass="org.tizen.nativeide.tool.sbi.gnu.c.linker.platform.base"/>
+							<tool command="g++" id="org.tizen.nativeide.tool.sbi.gnu.cpp.linker.platform.base.1096993722" name="C++ Linker" superClass="org.tizen.nativeide.tool.sbi.gnu.cpp.linker.platform.base"/>
+							<tool command="as" id="org.tizen.nativeapp.tool.sbi.gnu.assembler.platform.base.672657412" name="Assembler" superClass="org.tizen.nativeapp.tool.sbi.gnu.assembler.platform.base"/>
+							<tool id="org.tizen.nativeide.tool.gbs.1329190732" name="GBS" superClass="org.tizen.nativeide.tool.gbs">
+								<option id="org.tizen.gbs.options.517686113" name="Tizen Platform GBS Options" superClass="org.tizen.gbs.options" valueType="stringList">
+									<listOptionValue builtIn="false" value="--skip-conf-repos"/>
+									<listOptionValue builtIn="false" value="--include-all"/>
+									<listOptionValue builtIn="false" value="--keep-packs"/>
+									<listOptionValue builtIn="false" value="--extra-packs=zypper,gdb,gdb-server"/>
+								</option>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="org.tizen.nativeide.config.sbi.gcc45.platform.release.1994196581">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.tizen.nativeide.config.sbi.gcc45.platform.release.1994196581" moduleId="org.eclipse.cdt.core.settings" name="Release">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="${ProjName}" buildArtefactType="org.tizen.nativeide.buildArtefactType.platform" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.tizen.nativeide.buildArtefactType.platform" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;" id="org.tizen.nativeide.config.sbi.gcc45.platform.release.1994196581" name="Release" parent="org.tizen.nativeide.config.sbi.gcc45.platform.release">
+					<folderInfo id="org.tizen.nativeide.config.sbi.gcc45.platform.release.1994196581." name="/" resourcePath="">
+						<toolChain id="org.tizen.nativeide.toolchain.sbi.gcc45.platform.release.258603873" name="Tizen Platform Toolchain" superClass="org.tizen.nativeide.toolchain.sbi.gcc45.platform.release">
+							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="org.tizen.nativeide.target.sbi.gnu.platform.base.624172534" osList="linux,win32" superClass="org.tizen.nativeide.target.sbi.gnu.platform.base"/>
+							<builder buildPath="${workspace_loc:/Helloworld}/" id="org.tizen.nativeide.target.sbi.gcc45.platform.builder.61265515" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Tizen Platform Builder" superClass="org.tizen.nativeide.target.sbi.gcc45.platform.builder"/>
+							<tool id="org.tizen.nativeide.tool.sbi.gnu.archiver.platform.base.1384314610" name="Archiver" superClass="org.tizen.nativeide.tool.sbi.gnu.archiver.platform.base"/>
+							<tool command="g++" id="org.tizen.nativeide.tool.sbi.gnu.cpp.compiler.platform.base.760434172" name="C++ Compiler" superClass="org.tizen.nativeide.tool.sbi.gnu.cpp.compiler.platform.base">
+								<option id="sbi.gnu.cpp.compiler.option.460480982" name="Tizen-Target" superClass="sbi.gnu.cpp.compiler.option" valueType="userObjs">
+									<listOptionValue builtIn="false" value="mobile-2.4-device.platform_gcc.armel.platform"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.928662842" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool command="gcc" id="org.tizen.nativeide.tool.sbi.gnu.c.compiler.platform.base.1269184485" name="C Compiler" superClass="org.tizen.nativeide.tool.sbi.gnu.c.compiler.platform.base">
+								<option id="sbi.gnu.c.compiler.option.1312449321" name="Tizen-Target" superClass="sbi.gnu.c.compiler.option" valueType="userObjs">
+									<listOptionValue builtIn="false" value="mobile-2.4-device.platform_gcc.armel.platform"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.483149288" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="org.tizen.nativeide.tool.sbi.gnu.c.linker.platform.base.658883216" name="C Linker" superClass="org.tizen.nativeide.tool.sbi.gnu.c.linker.platform.base"/>
+							<tool command="g++" id="org.tizen.nativeide.tool.sbi.gnu.cpp.linker.platform.base.1959164626" name="C++ Linker" superClass="org.tizen.nativeide.tool.sbi.gnu.cpp.linker.platform.base"/>
+							<tool command="as" id="org.tizen.nativeapp.tool.sbi.gnu.assembler.platform.base.1249432347" name="Assembler" superClass="org.tizen.nativeapp.tool.sbi.gnu.assembler.platform.base"/>
+							<tool id="org.tizen.nativeide.tool.gbs.681713678" name="GBS" superClass="org.tizen.nativeide.tool.gbs">
+								<option id="org.tizen.gbs.options.630183143" name="Tizen Platform GBS Options" superClass="org.tizen.gbs.options" valueType="stringList">
+									<listOptionValue builtIn="false" value="--skip-conf-repos"/>
+									<listOptionValue builtIn="false" value="--include-all"/>
+									<listOptionValue builtIn="false" value="--keep-packs"/>
+									<listOptionValue builtIn="false" value="--extra-packs=zypper,gdb,gdb-server"/>
+								</option>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="Helloworld.org.tizen.nativebuild.target.sbi.gcc45.platform.445194479" name="%Platform.proj.name" projectType="org.tizen.nativebuild.target.sbi.gcc45.platform"/>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="org.tizen.nativeide.config.sbi.gcc45.platform.debug.1904742223">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.tizen.nativeide.config.sbi.gcc45.platform.release.1994196581">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/Xor"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/Xor"/>
+		</configuration>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+</cproject>

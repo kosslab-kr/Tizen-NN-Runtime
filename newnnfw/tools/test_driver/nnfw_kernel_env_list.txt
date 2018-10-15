@@ -1,0 +1,7 @@
+NNFW_KERNEL_convFloat32
+NNFW_KERNEL_averagePoolFloat32
+NNFW_KERNEL_maxPoolFloat32
+NNFW_KERNEL_softmaxFloat32
+NNFW_KERNEL_fullyConnectedFloat32
+NNFW_KERNEL_concatenationFloat32
+NNFW_KERNEL_reshapeGeneric

@@ -1,0 +1,6 @@
+file(GLOB CONTRIB_CMAKE_FILES "*/CMakeLists.txt")
+
+foreach(CONTRIB_CMAKE_FILE ${CONTRIB_CMAKE_FILES})
+  get_filename_component(CONTRIB_BASE ${CONTRIB_CMAKE_FILE} DIRECTORY)
+  add_subdirectory(${CONTRIB_BASE})
+endforeach(CONTRIB_CMAKE_FILE ${CONTRIB_CMAKE_FILES})

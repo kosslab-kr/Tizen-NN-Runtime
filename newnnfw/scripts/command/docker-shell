@@ -1,0 +1,24 @@
+#!/bin/bash
+
+SCRIPT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+source $SCRIPT_ROOT/common.sh
+
+HOST_HOME=$SCRIPT_ROOT/../..
+DOCKER_HOME=/home
+
+GIT_SSL_NO_VERIFY=1
+
+DOCKER_VOLUMES+=" -v $HOST_HOME:$DOCKER_HOME"
+
+DOCKER_ENV_VARS+=" -e http_proxy"
+DOCKER_ENV_VARS+=" -e no_proxy"
+DOCKER_ENV_VARS+=" -e GIT_SSL_NO_VERIFY"
+
+DOCKER_RUN_OPTS="--rm"
+DOCKER_RUN_OPTS+=" -w $DOCKER_HOME"
+DOCKER_RUN_OPTS+=" -it"
+
+CMD="/bin/bash"
+
+docker run $DOCKER_RUN_OPTS $DOCKER_ENV_VARS $DOCKER_VOLUMES $DOCKER_IMAGE_NAME $CMD

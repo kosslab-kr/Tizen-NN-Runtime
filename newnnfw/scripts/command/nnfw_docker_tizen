@@ -1,0 +1,14 @@
+DOCKER_IMAGE_NAME=${DOCKER_IMAGE_NAME:-nnfw_docker_tizen}
+
+echo "Using docker image $DOCKER_IMAGE_NAME"
+if [[ "$(docker images -q $DOCKER_IMAGE_NAME 2> /dev/null)" == "" ]]; then
+    echo "Need docker image: $DOCKER_IMAGE_NAME"
+    exit 1
+fi
+
+DOCKER_HOME=/home/nnfw
+
+GIT_SSL_NO_VERIFY=1
+DOCKER_ENV_VARS+=" -e http_proxy"
+DOCKER_ENV_VARS+=" -e no_proxy"
+DOCKER_ENV_VARS+=" -e GIT_SSL_NO_VERIFY"
