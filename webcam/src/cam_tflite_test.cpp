@@ -14,11 +14,9 @@
 
 int main(int argc, char *argv[])
 {
-    //const char graph_path[30] = "mobilenet_v1_192.tflite\0";
     const int num_threads = 1;
     //std::string input_layer_type = "float";
     std::vector<int> sizes = {SIZE * SIZE * 3}; // 192 * 192 * 3
-    //float x,y;
  
     if(argc != 2) {
         fprintf(stderr, "Usage: <model>\n");
@@ -69,20 +67,14 @@ int main(int argc, char *argv[])
     
     interpreter->ResizeInputTensor(0, sizes);
     
-    
-    //uchar* input = interpreter->typed_input_tensor<uchar>(0);
-    
-    
     if(interpreter->AllocateTensors() != kTfLiteOk){
         printf("Failed to allocate tensors\n");
         exit(0);
     }
 
-    //PrintInterpreterState(interpreter.get());
-    
     std::cout << "OpenCV Version : " << CV_VERSION << std::endl;
-    cv::Mat first_frame, frame, resized_frame;
-    int original_width, original_height;
+    cv::Mat frame, resized_frame, rgb_frame;
+//    int original_width, original_height;
     //cv::namedWindow("EXAMPLE02");
     cv::VideoCapture cap;
     
@@ -90,57 +82,73 @@ int main(int argc, char *argv[])
     std::cout << "input cam device #: ";
     std::cin >> cam_num;
     cap.open(cam_num);
+
+    const float input_mean = 0.0f;
+    const float input_std = 255.0f;
+    int wanted_input_height = SIZE;
+    int wanted_input_width = SIZE;
+    int wanted_input_channels = 3;
+    float* out = interpreter->typed_input_tensor<float>(0);
     
     if(cap.isOpened())
     {
         std::cout << "cap opened" << std::endl;
-        cap >> first_frame;
-        original_width = first_frame.cols;
-        original_height = first_frame.rows;
+//        cap >> frame;
+//        original_width = first_frame.cols;
+//        original_height = first_frame.rows;
 
-        imwrite("img.jpg", first_frame);
-        std::cout << "saved img.jpg" << std::endl;
+//        imwrite("img.jpg", first_frame);
+//        std::cout << "saved img.jpg" << std::endl;
 
         while(true) {
         
             cap >> frame;
 
             cv::resize(frame, resized_frame, cv::Size(SIZE, SIZE)); // resize for cnn
-            //cv::resize(resized_frame, frame, cv::Size(original_width, original_height));
-        
-            //uchar *data = resized_frame.data;
         
             // test...  it needs to change input and type value
             //interpreter->typed_input_tensor<uchar>(0) = data;
             //int input = interpreter->inputs()[0];
 
-            for(int i = 0; i < SIZE * SIZE * 3; i++)
-                interpreter->typed_input_tensor<float>(0)[i] = resized_frame.data[i];
+            cv::cvtColor(resized_frame, rgb_frame, cv::COLOR_BGR2RGB);
+            uint8_t* in = rgb_frame.data;
 
+            for (int y = 0; y < wanted_input_height; ++y) {
+                uint8_t* in_row = in + (y * SIZE * 3);
+                float* out_row = out + (y * wanted_input_width * wanted_input_channels);
+                for (int x = 0; x < wanted_input_width; ++x) {
+                    uint8_t* in_pixel = in_row + (x * 3);
+                    float* out_pixel = out_row + (x * wanted_input_channels);
+                    for (int c = 0; c < wanted_input_channels; ++c) {
+                        out_pixel[c] = (in_pixel[c] - input_mean) / input_std;
+                    }
+                }
+            }
+
+//            for(int i = 0; i < SIZE * SIZE * 3; i++)
+//                interpreter->typed_input_tensor<float>(0)[i] = resized_frame.data[i];
+
+
+/*
             cv::Mat bgr[3];
             cv::split(resized_frame, bgr);
 
             for(int i = 0; i < SIZE * SIZE; i++)
             {
                 for(int j = 0; j < 3; j++)
-                    interpreter->typed_input_tensor<float>(0)[i * 3 + j] = bgr[(j - 2) * (-1)].data[i];
+                    interpreter->typed_input_tensor<uint_8>(0)[i * 3 + j] = bgr[(j - 2) * (-1)].data[i];
 //                    interpreter->typed_input_tensor<float>(0)[j * SIZE * SIZE + i] = bgr[j].data[i];
             }
-
-//            interpreter->typed_input_tensor<float>(0), resized_frame.data, resized_frame.total() * resized_frame.elemSize());
-            
-            //interpreter->typed_input_tensor<float>(0)[0] = x;
-            //interpreter->typed_input_tensor<float>(0)[1] = y;
+*/
             
             if(interpreter->Invoke() != kTfLiteOk)
             {
                 std::printf("Failed to invoke!\n");
                 exit(0);
             }
+
             //float* output = interpreter->typed_output_tensor<float>(0);
             //printf("output = %f\n", output[0]);
-            
-            //std::cout << resized_frame.total() * resized_frame.elemSize() << std::endl;
 
             std::vector<std::pair<float, int> > v;
             for(int i = 0; i <= 1000; i++)
@@ -152,11 +160,6 @@ int main(int argc, char *argv[])
                 std::cout << "[" << v.at(i).second << "," << v.at(i).first << "]" << std::endl;
             }
             std::cout << std::endl;
-
-	
-
-
-
 
             //cv::imshow("EXAMPLE02", frame);
 /*

@@ -16,7 +16,7 @@ SET(SRCS
         src/cam_tflite_test.cpp
 )
 
-ADD_EXECUTABLE(cam ${SRCS})
+ADD_EXECUTABLE(${PROJECT_NAME} ${SRCS})
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} ${APP_PKGS_LDFLAGS})
 TARGET_LINK_LIBRARIES(${PROJECT_NAME} tensorflow-lite pthread dl)
