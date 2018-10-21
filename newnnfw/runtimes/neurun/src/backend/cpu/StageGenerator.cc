@@ -27,6 +27,7 @@
 #include "kernel/cpu/FullyConnectedLayer.h"
 #include "kernel/cpu/ReshapeLayer.h"
 #include "kernel/cpu/SoftMaxLayer.h"
+#include "kernel/cpu/TanhLayer.h"
 
 #include "logging.h"
 
@@ -520,6 +521,45 @@ Stage StageGenerator::generate(const graph::operation::Softmax::Node &node)
 
     fn->configure(input_alloc->buffer(), param.ifm_shape, param.scale, output_alloc->buffer(),
                   param.ofm_shape);
+
+    builder.append(std::move(fn));
+  };
+}
+
+Stage StageGenerator::generate(const graph::operation::Tanh::Node &node)
+{
+  const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)};
+  const ::neurun::graph::operand::Index ifm_index{node.getInputs().at(0)};
+
+  struct Param
+  {
+    int ofm_index;
+    int ifm_index;
+
+    ::neurun::kernel::cpu::Shape ofm_shape;
+    ::neurun::kernel::cpu::Shape ifm_shape;
+  };
+
+  Param param;
+
+  param.ofm_index = ofm_index.asInt();
+  param.ifm_index = ifm_index.asInt();
+
+  param.ofm_shape = ::neurun::kernel::cpu::getShape(_ctx.at(ofm_index));
+  param.ifm_shape = ::neurun::kernel::cpu::getShape(_ctx.at(ifm_index));
+
+  auto tensors = _tensor_builder;
+
+  return [tensors, param](IExecutionBuilder &builder) {
+    auto ofm_alloc = tensors->at(::neurun::graph::operand::Index{param.output_index}).get();
+    auto ifm_alloc = tensors->at(::neurun::graph::operand::Index{param.input_index}).get();
+
+		const ::arm_compute::ActivationLayerInfo act_info{
+			::arm_compute::ActivationLayerInfo::ActivationFunction::TANH, 1.0f, 1.0f};
+
+		std::unique_ptr<::neurun::kernel::cpu::TanhLayer> fn{new ::neurun::kernel::cpu::TanhLayer};
+
+    fn->configure(input_alloc->buffer(), param.ifm_shape, output_alloc->buffer(), param.ofm_shape);
 
     builder.append(std::move(fn));
   };
