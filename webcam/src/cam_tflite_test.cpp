@@ -1,7 +1,9 @@
 #include <iostream>
+#include <fstream>
 #include <algorithm>
+#include <queue>
 #include <opencv2/opencv.hpp>
-
+#include <opencv2/highgui/highgui.hpp>
 #include <stdio.h>
 #include <string>
 #include <vector>
@@ -10,24 +12,27 @@
 #include "tensorflow/contrib/lite/string_util.h"
 //#include "tensorflow/contrib/lite/tools/mutable_op_resolver.h"
 
-#define	SIZE 224
+#define    SIZE 224
+
+void GetTopN(const float* prediction, const int prediction_size, const int num_results, const float threshold, std::vector<std::pair<float, int>>* top_results);
+void LoadLabels(const char* filename, std::vector<std::string>* label_strings);
 
 int main(int argc, char *argv[])
 {
     const int num_threads = 1;
-    //std::string input_layer_type = "float";
     std::vector<int> sizes = {SIZE * SIZE * 3}; // 192 * 192 * 3
  
-    if(argc != 2) {
-        fprintf(stderr, "Usage: <model>\n");
+    if(argc != 3) {
+        fprintf(stderr, "Usage: <device#> <model>\n");
         return 1;
     }else{
-        std::cout << "Reading model from: " << argv[1] << std::endl;
-        //std::cout << "Reading image from: " << argv[2] << std::endl;
+        std::cout << "Reading device# from: " << argv[1] << std::endl;
+        std::cout << "Reading model from: " << argv[2] << std::endl;
     }
 
-    const char* filename = argv[1];
-    //const char* imagefile = argv[2];
+    long conv = strtol(argv[1], NULL, 10);
+    const int cam_num = conv;
+    const char* filename = argv[2];
    
     // to use deep learning, load model into FlatBufferModel and then inference using interpreter
     std::unique_ptr<tflite::FlatBufferModel> model(tflite::FlatBufferModel::BuildFromFile(filename));
@@ -39,6 +44,9 @@ int main(int argc, char *argv[])
     }
     
     tflite::ops::builtin::BuiltinOpResolver resolver;
+    std::vector<std::string> labels;
+    LoadLabels("labels.txt", &labels);
+    
     std::unique_ptr<tflite::Interpreter> interpreter;
     tflite::InterpreterBuilder(*model, resolver)(&interpreter);
 
@@ -58,13 +66,6 @@ int main(int argc, char *argv[])
         interpreter->SetNumThreads(num_threads);
     }
     
-    const std::vector<int> inputs = interpreter->inputs();
-    const std::vector<int> outputs = interpreter->outputs();
-
-    std::cout << "number of inputs: " << inputs.size() << "\n";
-    std::cout << "number of outputs: " << outputs.size() << "\n";
-
-    
     interpreter->ResizeInputTensor(0, sizes);
     
     if(interpreter->AllocateTensors() != kTfLiteOk){
@@ -74,13 +75,8 @@ int main(int argc, char *argv[])
 
     std::cout << "OpenCV Version : " << CV_VERSION << std::endl;
     cv::Mat frame, resized_frame, rgb_frame;
-//    int original_width, original_height;
-    //cv::namedWindow("EXAMPLE02");
     cv::VideoCapture cap;
     
-    int cam_num;
-    std::cout << "input cam device #: ";
-    std::cin >> cam_num;
     cap.open(cam_num);
 
     const float input_mean = 0.0f;
@@ -92,24 +88,13 @@ int main(int argc, char *argv[])
     
     if(cap.isOpened())
     {
-        std::cout << "cap opened" << std::endl;
-//        cap >> frame;
-//        original_width = first_frame.cols;
-//        original_height = first_frame.rows;
-
-//        imwrite("img.jpg", first_frame);
-//        std::cout << "saved img.jpg" << std::endl;
+        std::cout << "cap opened[" << cam_num << "]" << std::endl;
 
         while(true) {
         
             cap >> frame;
 
-            cv::resize(frame, resized_frame, cv::Size(SIZE, SIZE)); // resize for cnn
-        
-            // test...  it needs to change input and type value
-            //interpreter->typed_input_tensor<uchar>(0) = data;
-            //int input = interpreter->inputs()[0];
-
+            cv::resize(frame, resized_frame, cv::Size(SIZE, SIZE)); // resize for cnn       
             cv::cvtColor(resized_frame, rgb_frame, cv::COLOR_BGR2RGB);
             uint8_t* in = rgb_frame.data;
 
@@ -124,22 +109,6 @@ int main(int argc, char *argv[])
                     }
                 }
             }
-
-//            for(int i = 0; i < SIZE * SIZE * 3; i++)
-//                interpreter->typed_input_tensor<float>(0)[i] = resized_frame.data[i];
-
-
-/*
-            cv::Mat bgr[3];
-            cv::split(resized_frame, bgr);
-
-            for(int i = 0; i < SIZE * SIZE; i++)
-            {
-                for(int j = 0; j < 3; j++)
-                    interpreter->typed_input_tensor<uint_8>(0)[i * 3 + j] = bgr[(j - 2) * (-1)].data[i];
-//                    interpreter->typed_input_tensor<float>(0)[j * SIZE * SIZE + i] = bgr[j].data[i];
-            }
-*/
             
             if(interpreter->Invoke() != kTfLiteOk)
             {
@@ -147,21 +116,27 @@ int main(int argc, char *argv[])
                 exit(0);
             }
 
-            //float* output = interpreter->typed_output_tensor<float>(0);
-            //printf("output = %f\n", output[0]);
+            const int output_size = (int)labels.size();
+            const int kNumResults = 5;
+            const float kThreshold = 0.1f;
+            std::vector<std::pair<float, int>> top_results;
+            float* output = interpreter->typed_output_tensor<float>(0);
+            GetTopN(output, output_size, kNumResults, kThreshold, &top_results);
 
-            std::vector<std::pair<float, int> > v;
-            for(int i = 0; i <= 1000; i++)
-                v.push_back(std::pair<float, int>(interpreter->typed_output_tensor<float>(0)[i], i));    
-
-            std::sort(v.begin(), v.end());
-           
-            for(int i = 1000; i >= 996; i--){
-                std::cout << "[" << v.at(i).second << "," << v.at(i).first << "]" << std::endl;
+            //std::vector<std::pair<float, std::string>> newValues;
+            int i = 1;
+            for (const auto& result : top_results) {
+                //std::pair<float, std::string> item;
+                //item.first = result.first;
+                //item.second = labels[result.second];
+                
+                //newValues.push_back(item);
+                
+                std::cout << "[" << i << ", " << labels[result.second] << ", " << result.first << "]" << std::endl;
+                i++;
             }
             std::cout << std::endl;
-
-            //cv::imshow("EXAMPLE02", frame);
+            
 /*
             if(cv::waitKey(10) == 27)
             {
@@ -173,10 +148,50 @@ int main(int argc, char *argv[])
     else
         std::cout << "cap not opened" << std::endl;
     
-    
- 
-    
-    //cv::destroyWindow("EXAMPLE02");
-    
     return 0;
+}
+
+void LoadLabels(const char* filename, std::vector<std::string>* label_strings) {
+    std::ifstream t;
+    t.open(filename, std::ifstream::in);
+    std::string line;
+        while (t) {
+        std::getline(t, line);
+        if (line.length()){
+            label_strings->push_back(line);
+        }
+    }
+    t.close();
+}
+
+// Returns the top N confidence values over threshold in the provided vector,
+// sorted by confidence in descending order.
+void GetTopN(const float* prediction, const int prediction_size, const int num_results,
+                    const float threshold, std::vector<std::pair<float, int>>* top_results) {
+    // Will contain top N results in ascending order.
+    std::priority_queue<std::pair<float, int>, std::vector<std::pair<float, int>>, std::greater<std::pair<float, int>>> top_result_pq;
+
+    const long count = prediction_size;
+    for (int i = 0; i < count; ++i) {
+        const float value = prediction[i];
+        // Only add it if it beats the threshold and has a chance at being in
+        // the top N.
+        if (value < threshold) {
+            continue;
+        }
+
+        top_result_pq.push(std::pair<float, int>(value, i));
+
+        // If at capacity, kick the smallest value out.
+        if (top_result_pq.size() > num_results) {
+            top_result_pq.pop();
+        }
+  }
+
+    // Copy to output vector and reverse into descending order.
+    while (!top_result_pq.empty()) {
+        top_results->push_back(top_result_pq.top());
+        top_result_pq.pop();
+    }
+    std::reverse(top_results->begin(), top_results->end());
 }
