@@ -241,6 +241,27 @@ void Planner::visit(const graph::operation::Softmax::Node &node)
   _builder.addStage(stage_gen->generate(node));
 }
 
+void Planner::visit(const graph::operation::Tanh::Node &)
+{
+	const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)};
+	const ::neurun::graph::operand::Index ifm_index{node.getinputs().at(0)};
+
+	// TODO: verify whether asFeature() is right
+	const auto ofm_shape = _ctx.at(ofm_index).shape().asFeature();
+	const auto ifm_shape = _ctx.at(ifm_index).shape().asFeature();
+
+	// Set Shape Constraints
+	_builder.addShapeConstr(ofm_index, ::internal::asTensorInfo(ofm_shape));
+	_builder.addShapeConstr(ifm_index, ::internal::asTensorInfo(ifm_shape));
+
+	// backend
+	auto backend = node.lower_info()->backend();
+
+	// Generate Stage
+	auto stage_gen = backend.stage_gen();
+	_builder.addStage(stage_gen->generate(node));
+}
+
 void Planner::visit(const graph::operation::NOP::Node & /* node */)
 {
   // DO NOTHING
