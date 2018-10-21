@@ -532,8 +532,6 @@ Stage StageGenerator::generate(const graph::operation::Tanh::Node &node)
   const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)};
   const ::neurun::graph::operand::Index ifm_index{node.getInputs().at(0)};
 
-  assert(_ctx.at(scale_index).shape().rank() == 0);
-
   struct Param
   {
     int ofm_index;
@@ -556,7 +554,7 @@ Stage StageGenerator::generate(const graph::operation::Tanh::Node &node)
 
     auto fn = make_layer<::arm_compute::CLActivationLayer>();
 
-    fn->configure(input_alloc, output_alloc, param.scale);
+    fn->configure(input_alloc, output_alloc, act_info);
 
     builder.append(std::move(fn));
   };
