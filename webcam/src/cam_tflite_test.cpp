@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <unistd.h>
 #include <queue>
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -96,7 +97,7 @@ int main(int argc, char *argv[])
 
             cv::resize(frame, resized_frame, cv::Size(SIZE, SIZE)); // resize for cnn       
             cv::cvtColor(resized_frame, rgb_frame, cv::COLOR_BGR2RGB);
-            uint8_t* in = rgb_frame.data;
+//            uint8_t* in = rgb_frame.data;
             
             for(int i = 0; i < SIZE * SIZE * 3; ++i)
                 out[i] = rgb_frame.data[i] / input_std;
@@ -140,6 +141,7 @@ int main(int argc, char *argv[])
             }
             std::cout << std::endl;
             
+            usleep(10);
 /*
             if(cv::waitKey(10) == 27)
             {
