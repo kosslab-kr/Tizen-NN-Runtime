@@ -7,10 +7,12 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
+#include <time.h>
 #include "tensorflow/contrib/lite/kernels/register.h"
 #include "tensorflow/contrib/lite/model.h"
 #include "tensorflow/contrib/lite/string_util.h"
 //#include "tensorflow/contrib/lite/tools/mutable_op_resolver.h"
+
 
 #define    SIZE 224
 
@@ -89,7 +91,8 @@ int main(int argc, char *argv[])
     if(cap.isOpened())
     {
         std::cout << "cap opened[" << cam_num << "]" << std::endl;
-
+        clock_t past_time = clock();
+        
         while(true) {
         
             cap >> frame;
@@ -138,6 +141,14 @@ int main(int argc, char *argv[])
                 std::cout << "[" << i << ", " << labels[result.second] << ", " << result.first << "]" << std::endl;
                 i++;
             }
+            clock_t cur_time = clock();
+            clock_t tmp_time = (cur_time - past_time) / 1000.0f;
+            tmp_time = tmp_time / 1.0f;
+            std::cout << "elapsed time : " << tmp_time << "ms" << std::endl;
+            std::cout << "fps : " << 1000.0 / tmp_time << std::endl;
+            
+            past_time = cur_time;
+            
             std::cout << std::endl;
             
 /*
