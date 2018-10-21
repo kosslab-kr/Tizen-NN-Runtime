@@ -98,3 +98,5 @@
         }
     }
     ```
+  * 동작 화면
+    ![test_xor](./fig/webcam.png)
