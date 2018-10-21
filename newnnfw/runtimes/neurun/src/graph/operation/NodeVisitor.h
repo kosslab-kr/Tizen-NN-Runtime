@@ -47,6 +47,7 @@ struct NodeVisitor
   virtual void visit(const Softmax::Node &) = 0;
   virtual void visit(const NOP::Node &) = 0;
   virtual void visit(const Permute::Node &) = 0;
+  virtual void visit(const Tanh::Node &) = 0;
 };
 
 } // namespace operation
