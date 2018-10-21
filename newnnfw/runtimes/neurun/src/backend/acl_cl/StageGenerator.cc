@@ -527,6 +527,40 @@ Stage StageGenerator::generate(const graph::operation::Softmax::Node &node)
   };
 }
 
+Stage StageGenerator::generate(const graph::operation::Tanh::Node &node)
+{
+  const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)};
+  const ::neurun::graph::operand::Index ifm_index{node.getInputs().at(0)};
+
+  assert(_ctx.at(scale_index).shape().rank() == 0);
+
+  struct Param
+  {
+    int ofm_index;
+    int ifm_index;
+  };
+
+  Param param;
+
+  param.ofm_index = ofm_index.asInt();
+  param.ifm_index = ifm_index.asInt();
+
+  auto tensors = _tensor_builder;
+
+  return [tensors, param](IExecutionBuilder &builder) {
+    auto ofm_alloc = tensors->at(::neurun::graph::operand::Index{param.output_index}).get();
+    auto ifm_alloc = tensors->at(::neurun::graph::operand::Index{param.input_index}).get();
+
+		const ::arm_compute::ActivationLayerInfo act_info{
+			::arm_compute::ActivationLayerInfo::ActivationFunction::TANH, 1.0f, 1.0f};
+
+    auto fn = make_layer<::arm_compute::CLActivationLayer>();
+
+    fn->configure(input_alloc, output_alloc, param.scale);
+
+    builder.append(std::move(fn));
+  };
+}
 Stage StageGenerator::generate(const graph::operation::NOP::Node & /* node */)
 {
   // DO NOTHING

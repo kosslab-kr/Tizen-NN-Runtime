@@ -60,6 +60,7 @@ struct IStageGenerator
   virtual Stage generate(const graph::operation::Reshape::Node &node) = 0;
   virtual Stage generate(const graph::operation::Softmax::Node &node) = 0;
   virtual Stage generate(const graph::operation::NOP::Node &node) = 0;
+  virtual Stage generate(const graph::operation::Tanh::Node &node) = 0;
 };
 
 } // namespace backend
