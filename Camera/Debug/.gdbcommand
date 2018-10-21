@@ -1,5 +1,0 @@
-set sysroot /home/lazineer/tizen-studio/tools/smart-build-interface/../../platforms/tizen-4.0/mobile/rootstraps/mobile-4.0-emulator.core
-set debug-file-directory /home/lazineer/tizen-studio/tools/smart-build-interface/../../platforms/tizen-4.0/mobile/rootstraps/mobile-4.0-emulator.core/usr/lib/debug
-set solib-search-path /home/lazineer/workspace/Camera/Debug
-dir /home/lazineer/tizen-studio/tools/smart-build-interface/../../platforms/tizen-4.0/mobile/rootstraps/mobile-4.0-emulator.core/usr/src/debug
-sharedlibrary
