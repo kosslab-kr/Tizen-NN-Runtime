@@ -1,0 +1,5 @@
+build main_build: phony camera
+build all: phony main_build
+default all
+edje-cc-dep-options = -deps $out.d
+binaryName = camera
