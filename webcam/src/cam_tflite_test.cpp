@@ -79,11 +79,11 @@ int main(int argc, char *argv[])
     
     cap.open(cam_num);
 
-    const float input_mean = 0.0f;
+//    const float input_mean = 0.0f;
     const float input_std = 255.0f;
-    int wanted_input_height = SIZE;
-    int wanted_input_width = SIZE;
-    int wanted_input_channels = 3;
+//    int wanted_input_height = SIZE;
+//    int wanted_input_width = SIZE;
+//    int wanted_input_channels = 3;
     float* out = interpreter->typed_input_tensor<float>(0);
     
     if(cap.isOpened())
@@ -97,19 +97,22 @@ int main(int argc, char *argv[])
             cv::resize(frame, resized_frame, cv::Size(SIZE, SIZE)); // resize for cnn       
             cv::cvtColor(resized_frame, rgb_frame, cv::COLOR_BGR2RGB);
             uint8_t* in = rgb_frame.data;
-
-            for (int y = 0; y < wanted_input_height; ++y) {
+            
+            for(int i = 0; i < SIZE * SIZE * 3; ++i)
+                out[i] = rgb_frame.data[i] / input_std;
+/*            
+            for (int y = 0; y < SIZE; ++y) {
                 uint8_t* in_row = in + (y * SIZE * 3);
-                float* out_row = out + (y * wanted_input_width * wanted_input_channels);
-                for (int x = 0; x < wanted_input_width; ++x) {
+                float* out_row = out + (y * SIZE * 3);
+                for (int x = 0; x < SIZE; ++x) {
                     uint8_t* in_pixel = in_row + (x * 3);
-                    float* out_pixel = out_row + (x * wanted_input_channels);
-                    for (int c = 0; c < wanted_input_channels; ++c) {
+                    float* out_pixel = out_row + (x * 3);
+                    for (int c = 0; c < 3; ++c) {
                         out_pixel[c] = (in_pixel[c] - input_mean) / input_std;
                     }
                 }
             }
-            
+*/            
             if(interpreter->Invoke() != kTfLiteOk)
             {
                 std::printf("Failed to invoke!\n");
