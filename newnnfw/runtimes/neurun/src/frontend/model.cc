@@ -328,6 +328,14 @@ int ANeuralNetworksModel_addOperation(ANeuralNetworksModel *model,
 
       break;
     }
+		case ANEURALNETWORKS_TANH:
+		{
+			using GraphNode = neurun::graph::operation::Tanh::Node;
+
+			graph.addOperation(nnfw::make_unique<GraphNode>(node_param));
+
+			break;
+		}
     default:
       throw std::runtime_error{"Not supported operation"};
   };
