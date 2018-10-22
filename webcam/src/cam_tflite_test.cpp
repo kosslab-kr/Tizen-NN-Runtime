@@ -12,18 +12,28 @@
 #include "tensorflow/contrib/lite/kernels/register.h"
 #include "tensorflow/contrib/lite/model.h"
 #include "tensorflow/contrib/lite/string_util.h"
+#include "tensorflow/contrib/lite/interpreter.h"
 //#include "tensorflow/contrib/lite/tools/mutable_op_resolver.h"
 
 
 #define    SIZE 224
 
-void GetTopN(const float* prediction, const int prediction_size, const int num_results, const float threshold, std::vector<std::pair<float, int>>* top_results);
+template <class T>
+void GetTopN(T* prediction, int prediction_size, int num_results,
+                float threshold, std::vector<std::pair<float, int>>* top_results, bool input_floating);
+
+// explicit instantiation so that we can use them otherwhere
+template void GetTopN<uint8_t>(uint8_t*, int, int, float,
+                                 std::vector<std::pair<float, int>>*, bool);
+template void GetTopN<float>(float*, int, int, float,
+                               std::vector<std::pair<float, int>>*, bool);
+
 void LoadLabels(const char* filename, std::vector<std::string>* label_strings);
 
 int main(int argc, char *argv[])
 {
     const int num_threads = 1;
-    std::vector<int> sizes = {SIZE * SIZE * 3}; // 192 * 192 * 3
+    //std::vector<int> sizes = {SIZE * SIZE * 3}; // 192 * 192 * 3
  
     if(argc != 3) {
         fprintf(stderr, "Usage: <device#> <model>\n");
@@ -69,7 +79,7 @@ int main(int argc, char *argv[])
         interpreter->SetNumThreads(num_threads);
     }
     
-    interpreter->ResizeInputTensor(0, sizes);
+    //interpreter->ResizeInputTensor(0, sizes);
     
     if(interpreter->AllocateTensors() != kTfLiteOk){
         printf("Failed to allocate tensors\n");
@@ -82,17 +92,17 @@ int main(int argc, char *argv[])
     
     cap.open(cam_num);
 
-//    const float input_mean = 0.0f;
     const float input_std = 255.0f;
-//    int wanted_input_height = SIZE;
-//    int wanted_input_width = SIZE;
-//    int wanted_input_channels = 3;
-    float* out = interpreter->typed_input_tensor<float>(0);
-    
+   
     if(cap.isOpened())
     {
         std::cout << "cap opened[" << cam_num << "]" << std::endl;
         clock_t past_time = clock();
+        
+        int input = interpreter->inputs()[0];
+        int output = interpreter->outputs()[0];
+        std::cout << "input : " << input << std::endl;
+        std::cout << "output : " << output << std::endl;
         
         while(true) {
         
@@ -100,23 +110,22 @@ int main(int argc, char *argv[])
 
             cv::resize(frame, resized_frame, cv::Size(SIZE, SIZE)); // resize for cnn       
             cv::cvtColor(resized_frame, rgb_frame, cv::COLOR_BGR2RGB);
-//            uint8_t* in = rgb_frame.data;
             
-            for(int i = 0; i < SIZE * SIZE * 3; ++i)
-                out[i] = rgb_frame.data[i] / input_std;
-/*            
-            for (int y = 0; y < SIZE; ++y) {
-                uint8_t* in_row = in + (y * SIZE * 3);
-                float* out_row = out + (y * SIZE * 3);
-                for (int x = 0; x < SIZE; ++x) {
-                    uint8_t* in_pixel = in_row + (x * 3);
-                    float* out_pixel = out_row + (x * 3);
-                    for (int c = 0; c < 3; ++c) {
-                        out_pixel[c] = (in_pixel[c] - input_mean) / input_std;
-                    }
-                }
+            switch (interpreter->tensor(input)->type) {
+                case kTfLiteFloat32:
+                    for(int i = 0; i < SIZE * SIZE * 3; ++i)
+                        interpreter->typed_input_tensor<float>(0)[i] = rgb_frame.data[i] / input_std;
+                    break;
+                case kTfLiteUInt8:
+                    for(int i = 0; i < SIZE * SIZE * 3; ++i)
+                        interpreter->typed_input_tensor<uint8_t>(0)[i] = rgb_frame.data[i];
+                    break;
+                default:
+                    std::cout << "cannot handle input type "
+                         << interpreter->tensor(0)->type << " yet";
+                    exit(-1);
             }
-*/            
+          
             if(interpreter->Invoke() != kTfLiteOk)
             {
                 std::printf("Failed to invoke!\n");
@@ -127,18 +136,22 @@ int main(int argc, char *argv[])
             const int kNumResults = 5;
             const float kThreshold = 0.1f;
             std::vector<std::pair<float, int>> top_results;
-            float* output = interpreter->typed_output_tensor<float>(0);
-            GetTopN(output, output_size, kNumResults, kThreshold, &top_results);
+            
+            switch (interpreter->tensor(output)->type) {
+                case kTfLiteFloat32:
+                    GetTopN(interpreter->typed_output_tensor<float>(0), output_size, kNumResults, kThreshold, &top_results, true);
+                    break;
+                case kTfLiteUInt8:
+                    GetTopN(interpreter->typed_output_tensor<uint8_t>(0), output_size, kNumResults, kThreshold, &top_results, false);
+                    break;
+                default:
+                    std::cout << "cannot handle input type "
+                         << interpreter->tensor(0)->type << " yet";
+                    exit(-1);
+            }         
 
-            //std::vector<std::pair<float, std::string>> newValues;
             int i = 1;
-            for (const auto& result : top_results) {
-                //std::pair<float, std::string> item;
-                //item.first = result.first;
-                //item.second = labels[result.second];
-                
-                //newValues.push_back(item);
-                
+            for (const auto& result : top_results) {               
                 std::cout << "[" << i << ", " << labels[result.second] << ", " << result.first << "]" << std::endl;
                 i++;
             }
@@ -182,14 +195,21 @@ void LoadLabels(const char* filename, std::vector<std::string>* label_strings) {
 
 // Returns the top N confidence values over threshold in the provided vector,
 // sorted by confidence in descending order.
-void GetTopN(const float* prediction, const int prediction_size, const int num_results,
-                    const float threshold, std::vector<std::pair<float, int>>* top_results) {
+template <class T>
+void GetTopN(T* prediction, int prediction_size, int num_results,
+                float threshold, std::vector<std::pair<float, int>>* top_results, bool input_floating) {
     // Will contain top N results in ascending order.
     std::priority_queue<std::pair<float, int>, std::vector<std::pair<float, int>>, std::greater<std::pair<float, int>>> top_result_pq;
 
     const long count = prediction_size;
     for (int i = 0; i < count; ++i) {
-        const float value = prediction[i];
+        float value;
+        
+        if (input_floating)
+            value = prediction[i];
+        else
+            value = prediction[i] / 255.0;
+      
         // Only add it if it beats the threshold and has a chance at being in
         // the top N.
         if (value < threshold) {
@@ -211,3 +231,4 @@ void GetTopN(const float* prediction, const int prediction_size, const int num_r
     }
     std::reverse(top_results->begin(), top_results->end());
 }
+
