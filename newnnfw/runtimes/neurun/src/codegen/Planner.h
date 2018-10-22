@@ -55,7 +55,7 @@ public:
   virtual void visit(const graph::operation::Softmax::Node &) override;
   virtual void visit(const graph::operation::NOP::Node &) override;
   virtual void visit(const graph::operation::Permute::Node &) override;
-	virtual void visit(const graph::operation::Tanh::Implicit::Node &) ovdrride;
+	virtual void visit(const graph::operation::Tanh::Implicit::Node &) override;
 
 private:
   const neurun::graph::operand::Set &_ctx;
