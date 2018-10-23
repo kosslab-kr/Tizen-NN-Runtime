@@ -1,5 +1,6 @@
 * 사용법
   * cam [webcam_device#] [model_filename] [input_width] [input_height] [use_NNAPI]
+  * [labels.txt](../models/labels.txt)와 [model file](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/lite/g3doc/models.md)이 현재 경로상에 있어야 함.
 * 테스트 결과
   * inception과 mobilenet 두 개의 모델을 사용해본 결과, 깊은 모델일수록 GPU 사용 효과가 큰 듯 하다.
   * inception_v4 (input size = 299 * 299)
