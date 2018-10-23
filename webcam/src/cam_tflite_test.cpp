@@ -16,8 +16,6 @@
 //#include "tensorflow/contrib/lite/tools/mutable_op_resolver.h"
 
 
-#define    SIZE 224
-
 template <class T>
 void GetTopN(T* prediction, int prediction_size, int num_results,
                 float threshold, std::vector<std::pair<float, int>>* top_results, bool input_floating);
@@ -32,19 +30,38 @@ void LoadLabels(const char* filename, std::vector<std::string>* label_strings);
 
 int main(int argc, char *argv[])
 {
-    const int num_threads = 1;
-    //std::vector<int> sizes = {SIZE * SIZE * 3}; // 192 * 192 * 3
+    const int num_threads = 4;
  
-    if(argc != 3) {
-        fprintf(stderr, "Usage: <device#> <model>\n");
+    if(argc != 6) {
+        fprintf(stderr, "Usage: <device#> <model> <input_width> <input_height> <use NNAPI>\n");
         return 1;
     }else{
-        std::cout << "Reading device# from: " << argv[1] << std::endl;
-        std::cout << "Reading model from: " << argv[2] << std::endl;
+        std::cout << "Device#: " << argv[1] << std::endl;
+        std::cout << "Model from: " << argv[2] << std::endl;
+        std::cout << "Input Width: " << argv[3] << std::endl;
+        std::cout << "Input Height: " << argv[4] << std::endl;
+        std::cout << "Use NNAPI: " << argv[5] << std::endl;
     }
 
     long conv = strtol(argv[1], NULL, 10);
     const int cam_num = conv;
+    
+    conv = strtol(argv[3], NULL, 10);
+    const int width = conv;
+    
+    conv = strtol(argv[4], NULL, 10);
+    const int height = conv;
+    
+    conv = strtol(argv[5], NULL, 10);
+    const int use_nnapi = conv;
+
+    if(use_nnapi != 0 && use_nnapi != 1)
+    {
+        fprintf(stderr, "param <use NNAPI> is NOT 0 OR 1\n");
+        return 1;
+    }
+
+
     const char* filename = argv[2];
    
     // to use deep learning, load model into FlatBufferModel and then inference using interpreter
@@ -63,7 +80,7 @@ int main(int argc, char *argv[])
     std::unique_ptr<tflite::Interpreter> interpreter;
     tflite::InterpreterBuilder(*model, resolver)(&interpreter);
 
-    interpreter->UseNNAPI(0);
+    interpreter->UseNNAPI(use_nnapi);
 
     int t_size = interpreter->tensors_size();
 
@@ -79,7 +96,7 @@ int main(int argc, char *argv[])
         interpreter->SetNumThreads(num_threads);
     }
     
-    //interpreter->ResizeInputTensor(0, sizes);
+    //interpreter->ResizeInputTensor(interpreter->inputs()[0], std::vector<int>{1, 224, 224, 3});
     
     if(interpreter->AllocateTensors() != kTfLiteOk){
         printf("Failed to allocate tensors\n");
@@ -97,27 +114,31 @@ int main(int argc, char *argv[])
     if(cap.isOpened())
     {
         std::cout << "cap opened[" << cam_num << "]" << std::endl;
-        clock_t past_time = clock();
         
         int input = interpreter->inputs()[0];
         int output = interpreter->outputs()[0];
         std::cout << "input : " << input << std::endl;
         std::cout << "output : " << output << std::endl;
         
-        while(true) {
+        const int output_size = (int)labels.size();
+        const int kNumResults = 5;
+        const float kThreshold = 0.01f;  
+        double st, end, fps, elapsed;
+        st = static_cast<double>(cv::getTickCount());
         
+        while(true) {
             cap >> frame;
 
-            cv::resize(frame, resized_frame, cv::Size(SIZE, SIZE)); // resize for cnn       
+            cv::resize(frame, resized_frame, cv::Size(width, height)); // resize for cnn       
             cv::cvtColor(resized_frame, rgb_frame, cv::COLOR_BGR2RGB);
             
             switch (interpreter->tensor(input)->type) {
                 case kTfLiteFloat32:
-                    for(int i = 0; i < SIZE * SIZE * 3; ++i)
+                    for(int i = 0; i < width * height * 3; ++i)
                         interpreter->typed_input_tensor<float>(0)[i] = rgb_frame.data[i] / input_std;
                     break;
                 case kTfLiteUInt8:
-                    for(int i = 0; i < SIZE * SIZE * 3; ++i)
+                    for(int i = 0; i < width * height * 3; ++i)
                         interpreter->typed_input_tensor<uint8_t>(0)[i] = rgb_frame.data[i];
                     break;
                 default:
@@ -132,9 +153,6 @@ int main(int argc, char *argv[])
                 exit(0);
             }
 
-            const int output_size = (int)labels.size();
-            const int kNumResults = 5;
-            const float kThreshold = 0.1f;
             std::vector<std::pair<float, int>> top_results;
             
             switch (interpreter->tensor(output)->type) {
@@ -155,17 +173,16 @@ int main(int argc, char *argv[])
                 std::cout << "[" << i << ", " << labels[result.second] << ", " << result.first << "]" << std::endl;
                 i++;
             }
-            clock_t cur_time = clock();
-            clock_t tmp_time = (cur_time - past_time) / 1000.0f;
-            tmp_time = tmp_time / 1.0f;
-            std::cout << "elapsed time : " << tmp_time << "ms" << std::endl;
-            std::cout << "fps : " << 1000.0 / tmp_time << std::endl;
-            
-            past_time = cur_time;
-            
+                       
+            end = static_cast<double>(cv::getTickCount());
+            elapsed = (end - st) / cv::getTickFrequency() * 1000;
+            fps = 1000 / elapsed;
+            std::cout << "elapsed time : " << elapsed << "ms" << std::endl;
+            std::cout << "fps : " << fps << std::endl;
             std::cout << std::endl;
             
-            usleep(10);
+            st = static_cast<double>(cv::getTickCount());
+            //usleep(10);
 /*
             if(cv::waitKey(10) == 27)
             {
