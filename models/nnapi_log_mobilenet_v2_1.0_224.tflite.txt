@@ -1,0 +1,2737 @@
+pi function 'ANeuralNetworksModel_create' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksModel_create(0x2ab53d0) --> (model: 0x2ab3ae0)
+nnapi function 'ANeuralNetworksModel_addOperand' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 0
+  rank: 4
+    dim(0): 320
+    dim(1): 1
+    dim(2): 1
+    dim(3): 960
+nnapi function 'ANeuralNetworksModel_setOperandValue' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 0)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 1
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 1)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 2
+  rank: 4
+    dim(0): 384
+    dim(1): 1
+    dim(2): 1
+    dim(3): 64
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 2)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 3
+  rank: 4
+    dim(0): 96
+    dim(1): 1
+    dim(2): 1
+    dim(3): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 3)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 4
+  rank: 4
+    dim(0): 576
+    dim(1): 1
+    dim(2): 1
+    dim(3): 96
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 4)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 5
+  rank: 4
+    dim(0): 24
+    dim(1): 1
+    dim(2): 1
+    dim(3): 144
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 5)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 6
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 144
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 6)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 7
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 7)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 8
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 8)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 9
+  rank: 4
+    dim(0): 960
+    dim(1): 1
+    dim(2): 1
+    dim(3): 160
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 9)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 10
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 10)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 11
+  rank: 4
+    dim(0): 64
+    dim(1): 1
+    dim(2): 1
+    dim(3): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 11)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 12
+  rank: 4
+    dim(0): 32
+    dim(1): 1
+    dim(2): 1
+    dim(3): 144
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 12)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 13
+  rank: 4
+    dim(0): 576
+    dim(1): 1
+    dim(2): 1
+    dim(3): 96
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 13)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 14
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 14)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 15
+  rank: 4
+    dim(0): 96
+    dim(1): 1
+    dim(2): 1
+    dim(3): 16
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 15)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 16
+  rank: 4
+    dim(0): 16
+    dim(1): 1
+    dim(2): 1
+    dim(3): 32
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 16)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 17
+  rank: 4
+    dim(0): 384
+    dim(1): 1
+    dim(2): 1
+    dim(3): 64
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 17)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 18
+  rank: 4
+    dim(0): 32
+    dim(1): 1
+    dim(2): 1
+    dim(3): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 18)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 19
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 19)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 20
+  rank: 4
+    dim(0): 64
+    dim(1): 1
+    dim(2): 1
+    dim(3): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 20)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 21
+  rank: 4
+    dim(0): 960
+    dim(1): 1
+    dim(2): 1
+    dim(3): 160
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 21)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 22
+  rank: 4
+    dim(0): 32
+    dim(1): 1
+    dim(2): 1
+    dim(3): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 22)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 23
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 144
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 23)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 24
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 24)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 25
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 25)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 26
+  rank: 4
+    dim(0): 1001
+    dim(1): 1
+    dim(2): 1
+    dim(3): 1280
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 26)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 27
+  rank: 4
+    dim(0): 384
+    dim(1): 1
+    dim(2): 1
+    dim(3): 64
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 27)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 28
+  rank: 4
+    dim(0): 192
+    dim(1): 1
+    dim(2): 1
+    dim(3): 32
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 28)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 29
+  rank: 4
+    dim(0): 192
+    dim(1): 1
+    dim(2): 1
+    dim(3): 32
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 29)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 30
+  rank: 4
+    dim(0): 64
+    dim(1): 1
+    dim(2): 1
+    dim(3): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 30)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 31
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 32
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 31)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 32
+  rank: 4
+    dim(0): 160
+    dim(1): 1
+    dim(2): 1
+    dim(3): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 32)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 33
+  rank: 4
+    dim(0): 192
+    dim(1): 1
+    dim(2): 1
+    dim(3): 32
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 33)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 34
+  rank: 4
+    dim(0): 96
+    dim(1): 1
+    dim(2): 1
+    dim(3): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 34)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 35
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 35)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 36
+  rank: 4
+    dim(0): 384
+    dim(1): 1
+    dim(2): 1
+    dim(3): 64
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 36)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 37
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 37)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 38
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 38)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 39
+  rank: 4
+    dim(0): 144
+    dim(1): 1
+    dim(2): 1
+    dim(3): 24
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 39)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 40
+  rank: 4
+    dim(0): 160
+    dim(1): 1
+    dim(2): 1
+    dim(3): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 40)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 41
+  rank: 4
+    dim(0): 144
+    dim(1): 1
+    dim(2): 1
+    dim(3): 24
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 41)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 42
+  rank: 4
+    dim(0): 96
+    dim(1): 1
+    dim(2): 1
+    dim(3): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 42)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 43
+  rank: 4
+    dim(0): 576
+    dim(1): 1
+    dim(2): 1
+    dim(3): 96
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 43)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 44
+  rank: 4
+    dim(0): 960
+    dim(1): 1
+    dim(2): 1
+    dim(3): 160
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 44)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 45
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 45)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 46
+  rank: 4
+    dim(0): 1280
+    dim(1): 1
+    dim(2): 1
+    dim(3): 320
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 46)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 47
+  rank: 4
+    dim(0): 24
+    dim(1): 1
+    dim(2): 1
+    dim(3): 96
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 47)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 48
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 48)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 49
+  rank: 4
+    dim(0): 32
+    dim(1): 3
+    dim(2): 3
+    dim(3): 3
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 49)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 50
+  rank: 4
+    dim(0): 160
+    dim(1): 1
+    dim(2): 1
+    dim(3): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 50)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 51
+  rank: 4
+    dim(0): 64
+    dim(1): 1
+    dim(2): 1
+    dim(3): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 51)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 52
+  rank: 4
+    dim(0): 1
+    dim(1): 3
+    dim(2): 3
+    dim(3): 96
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 52)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 53
+  rank: 1
+    dim(0): 32
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 53)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 54
+  rank: 4
+    dim(0): 1
+    dim(1): 112
+    dim(2): 112
+    dim(3): 32
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 55
+  rank: 1
+    dim(0): 1280
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 55)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 56
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 1280
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 57
+  rank: 4
+    dim(0): 1
+    dim(1): 1
+    dim(2): 1
+    dim(3): 1280
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 58
+  rank: 4
+    dim(0): 1
+    dim(1): 1
+    dim(2): 1
+    dim(3): 1001
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 59
+  rank: 1
+    dim(0): 1001
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 59)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 60
+  rank: 2
+    dim(0): 1
+    dim(1): 1001
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_INT32)
+  id: 61
+  rank: 1
+    dim(0): 2
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 61)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 62
+  rank: 2
+    dim(0): 1
+    dim(1): 1001
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 63
+  rank: 4
+    dim(0): 1
+    dim(1): 112
+    dim(2): 112
+    dim(3): 32
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 64
+  rank: 1
+    dim(0): 32
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 64)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 65
+  rank: 4
+    dim(0): 1
+    dim(1): 112
+    dim(2): 112
+    dim(3): 16
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 66
+  rank: 1
+    dim(0): 16
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 66)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 67
+  rank: 4
+    dim(0): 1
+    dim(1): 56
+    dim(2): 56
+    dim(3): 96
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 68
+  rank: 1
+    dim(0): 96
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 68)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 69
+  rank: 1
+    dim(0): 96
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 69)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 70
+  rank: 4
+    dim(0): 1
+    dim(1): 112
+    dim(2): 112
+    dim(3): 96
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 71
+  rank: 4
+    dim(0): 1
+    dim(1): 56
+    dim(2): 56
+    dim(3): 24
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 72
+  rank: 1
+    dim(0): 24
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 72)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 73
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 384
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 74
+  rank: 1
+    dim(0): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 74)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 75
+  rank: 1
+    dim(0): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 75)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 76
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 384
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 77
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 96
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 78
+  rank: 1
+    dim(0): 96
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 78)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 79
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 96
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 80
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 576
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 81
+  rank: 1
+    dim(0): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 81)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 82
+  rank: 1
+    dim(0): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 82)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 83
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 576
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 84
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 96
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 85
+  rank: 1
+    dim(0): 96
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 85)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 86
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 96
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 87
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 576
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 88
+  rank: 1
+    dim(0): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 88)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 89
+  rank: 1
+    dim(0): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 89)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 90
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 576
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 91
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 96
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 92
+  rank: 1
+    dim(0): 96
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 92)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 93
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 576
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 94
+  rank: 1
+    dim(0): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 94)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 95
+  rank: 1
+    dim(0): 576
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 95)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 96
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 576
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 97
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 160
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 98
+  rank: 1
+    dim(0): 160
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 98)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 99
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 160
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 100
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 960
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 101
+  rank: 1
+    dim(0): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 101)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 102
+  rank: 1
+    dim(0): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 102)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 103
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 960
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 104
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 160
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 105
+  rank: 1
+    dim(0): 160
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 105)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 106
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 160
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 107
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 960
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 108
+  rank: 1
+    dim(0): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 108)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 109
+  rank: 1
+    dim(0): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 109)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 110
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 960
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 111
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 160
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 112
+  rank: 1
+    dim(0): 160
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 112)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 113
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 960
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 114
+  rank: 1
+    dim(0): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 114)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 115
+  rank: 1
+    dim(0): 960
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 115)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 116
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 960
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 117
+  rank: 4
+    dim(0): 1
+    dim(1): 7
+    dim(2): 7
+    dim(3): 320
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 118
+  rank: 1
+    dim(0): 320
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 118)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 119
+  rank: 4
+    dim(0): 1
+    dim(1): 56
+    dim(2): 56
+    dim(3): 24
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 120
+  rank: 4
+    dim(0): 1
+    dim(1): 56
+    dim(2): 56
+    dim(3): 144
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 121
+  rank: 1
+    dim(0): 144
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 121)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 122
+  rank: 1
+    dim(0): 144
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 122)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 123
+  rank: 4
+    dim(0): 1
+    dim(1): 56
+    dim(2): 56
+    dim(3): 144
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 124
+  rank: 4
+    dim(0): 1
+    dim(1): 56
+    dim(2): 56
+    dim(3): 24
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 125
+  rank: 1
+    dim(0): 24
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 125)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 126
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 144
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 127
+  rank: 1
+    dim(0): 144
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 127)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 128
+  rank: 1
+    dim(0): 144
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 128)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 129
+  rank: 4
+    dim(0): 1
+    dim(1): 56
+    dim(2): 56
+    dim(3): 144
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 130
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 32
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 131
+  rank: 1
+    dim(0): 32
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 131)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 132
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 32
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 133
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 192
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 134
+  rank: 1
+    dim(0): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 134)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 135
+  rank: 1
+    dim(0): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 135)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 136
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 192
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 137
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 32
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 138
+  rank: 1
+    dim(0): 32
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 138)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 139
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 32
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 140
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 192
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 141
+  rank: 1
+    dim(0): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 141)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 142
+  rank: 1
+    dim(0): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 142)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 143
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 192
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 144
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 32
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 145
+  rank: 1
+    dim(0): 32
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 145)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 146
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 192
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 147
+  rank: 1
+    dim(0): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 147)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 148
+  rank: 1
+    dim(0): 192
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 148)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 149
+  rank: 4
+    dim(0): 1
+    dim(1): 28
+    dim(2): 28
+    dim(3): 192
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 150
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 64
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 151
+  rank: 1
+    dim(0): 64
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 151)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 152
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 64
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 153
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 384
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 154
+  rank: 1
+    dim(0): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 154)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 155
+  rank: 1
+    dim(0): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 155)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 156
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 384
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 157
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 64
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 158
+  rank: 1
+    dim(0): 64
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 158)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 159
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 64
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 160
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 384
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 161
+  rank: 1
+    dim(0): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 161)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 162
+  rank: 1
+    dim(0): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 162)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 163
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 384
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 164
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 64
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 165
+  rank: 1
+    dim(0): 64
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 165)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 166
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 64
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 167
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 384
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 168
+  rank: 1
+    dim(0): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 168)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 169
+  rank: 1
+    dim(0): 384
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 169)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 170
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 384
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 171
+  rank: 4
+    dim(0): 1
+    dim(1): 14
+    dim(2): 14
+    dim(3): 64
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 172
+  rank: 1
+    dim(0): 64
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 172)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_TENSOR_FLOAT32)
+  id: 173
+  rank: 4
+    dim(0): 1
+    dim(1): 224
+    dim(2): 224
+    dim(3): 3
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 174
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 174)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 175
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 175)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 176
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 176)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 177
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 177)
+nnapi function 'ANeuralNetworksModel_addOperation' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 173
+  input(1): 49
+  input(2): 53
+  input(3): 174
+  input(4): 175
+  input(5): 176
+  input(6): 177
+  output(0): 54
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 178
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 178)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 179
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 179)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 180
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 180)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 181
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 181)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 182
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 182)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 54
+  input(1): 31
+  input(2): 64
+  input(3): 178
+  input(4): 179
+  input(5): 180
+  input(6): 181
+  input(7): 182
+  output(0): 63
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 183
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 183)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 184
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 184)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 185
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 185)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 186
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 186)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 63
+  input(1): 16
+  input(2): 66
+  input(3): 183
+  input(4): 184
+  input(5): 185
+  input(6): 186
+  output(0): 65
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 187
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 187)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 188
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 188)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 189
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 189)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 190
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 190)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 65
+  input(1): 15
+  input(2): 69
+  input(3): 187
+  input(4): 188
+  input(5): 189
+  input(6): 190
+  output(0): 70
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 191
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 191)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 192
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 192)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 193
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 193)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 194
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 194)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 195
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 195)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 70
+  input(1): 52
+  input(2): 68
+  input(3): 191
+  input(4): 192
+  input(5): 193
+  input(6): 194
+  input(7): 195
+  output(0): 67
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 196
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 196)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 197
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 197)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 198
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 198)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 199
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 199)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 67
+  input(1): 47
+  input(2): 72
+  input(3): 196
+  input(4): 197
+  input(5): 198
+  input(6): 199
+  output(0): 71
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 200
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 200)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 201
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 201)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 202
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 202)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 203
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 203)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 71
+  input(1): 41
+  input(2): 122
+  input(3): 200
+  input(4): 201
+  input(5): 202
+  input(6): 203
+  output(0): 123
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 204
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 204)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 205
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 205)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 206
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 206)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 207
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 207)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 208
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 208)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 123
+  input(1): 6
+  input(2): 121
+  input(3): 204
+  input(4): 205
+  input(5): 206
+  input(6): 207
+  input(7): 208
+  output(0): 120
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 209
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 209)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 210
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 210)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 211
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 211)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 212
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 212)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 120
+  input(1): 5
+  input(2): 125
+  input(3): 209
+  input(4): 210
+  input(5): 211
+  input(6): 212
+  output(0): 124
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 213
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 213)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: unknown(0), inputCount: 3, outputCount: 1)
+  input(0): 124
+  input(1): 71
+  input(2): 213
+  output(0): 119
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 214
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 214)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 215
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 215)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 216
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 216)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 217
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 217)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 119
+  input(1): 39
+  input(2): 128
+  input(3): 214
+  input(4): 215
+  input(5): 216
+  input(6): 217
+  output(0): 129
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 218
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 218)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 219
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 219)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 220
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 220)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 221
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 221)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 222
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 222)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 129
+  input(1): 23
+  input(2): 127
+  input(3): 218
+  input(4): 219
+  input(5): 220
+  input(6): 221
+  input(7): 222
+  output(0): 126
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 223
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 223)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 224
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 224)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 225
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 225)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 226
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 226)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 126
+  input(1): 12
+  input(2): 131
+  input(3): 223
+  input(4): 224
+  input(5): 225
+  input(6): 226
+  output(0): 130
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 227
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 227)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 228
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 228)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 229
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 229)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 230
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 230)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 130
+  input(1): 29
+  input(2): 135
+  input(3): 227
+  input(4): 228
+  input(5): 229
+  input(6): 230
+  output(0): 136
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 231
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 231)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 232
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 232)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 233
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 233)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 234
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 234)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 235
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 235)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 136
+  input(1): 25
+  input(2): 134
+  input(3): 231
+  input(4): 232
+  input(5): 233
+  input(6): 234
+  input(7): 235
+  output(0): 133
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 236
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 236)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 237
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 237)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 238
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 238)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 239
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 239)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 133
+  input(1): 18
+  input(2): 138
+  input(3): 236
+  input(4): 237
+  input(5): 238
+  input(6): 239
+  output(0): 137
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 240
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 240)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: unknown(0), inputCount: 3, outputCount: 1)
+  input(0): 137
+  input(1): 130
+  input(2): 240
+  output(0): 132
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 241
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 241)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 242
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 242)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 243
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 243)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 244
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 244)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 132
+  input(1): 33
+  input(2): 142
+  input(3): 241
+  input(4): 242
+  input(5): 243
+  input(6): 244
+  output(0): 143
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 245
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 245)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 246
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 246)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 247
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 247)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 248
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 248)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 249
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 249)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 143
+  input(1): 1
+  input(2): 141
+  input(3): 245
+  input(4): 246
+  input(5): 247
+  input(6): 248
+  input(7): 249
+  output(0): 140
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 250
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 250)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 251
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 251)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 252
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 252)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 253
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 253)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 140
+  input(1): 22
+  input(2): 145
+  input(3): 250
+  input(4): 251
+  input(5): 252
+  input(6): 253
+  output(0): 144
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 254
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 254)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: unknown(0), inputCount: 3, outputCount: 1)
+  input(0): 144
+  input(1): 132
+  input(2): 254
+  output(0): 139
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 255
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 255)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 256
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 256)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 257
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 257)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 258
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 258)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 139
+  input(1): 28
+  input(2): 148
+  input(3): 255
+  input(4): 256
+  input(5): 257
+  input(6): 258
+  output(0): 149
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 259
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 259)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 260
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 260)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 261
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 261)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 262
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 262)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 263
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 263)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 149
+  input(1): 14
+  input(2): 147
+  input(3): 259
+  input(4): 260
+  input(5): 261
+  input(6): 262
+  input(7): 263
+  output(0): 146
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 264
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 264)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 265
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 265)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 266
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 266)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 267
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 267)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 146
+  input(1): 30
+  input(2): 151
+  input(3): 264
+  input(4): 265
+  input(5): 266
+  input(6): 267
+  output(0): 150
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 268
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 268)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 269
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 269)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 270
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 270)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 271
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 271)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 150
+  input(1): 2
+  input(2): 155
+  input(3): 268
+  input(4): 269
+  input(5): 270
+  input(6): 271
+  output(0): 156
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 272
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 272)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 273
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 273)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 274
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 274)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 275
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 275)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 276
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 276)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 156
+  input(1): 38
+  input(2): 154
+  input(3): 272
+  input(4): 273
+  input(5): 274
+  input(6): 275
+  input(7): 276
+  output(0): 153
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 277
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 277)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 278
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 278)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 279
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 279)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 280
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 280)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 153
+  input(1): 11
+  input(2): 158
+  input(3): 277
+  input(4): 278
+  input(5): 279
+  input(6): 280
+  output(0): 157
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 281
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 281)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: unknown(0), inputCount: 3, outputCount: 1)
+  input(0): 157
+  input(1): 150
+  input(2): 281
+  output(0): 152
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 282
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 282)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 283
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 283)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 284
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 284)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 285
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 285)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 152
+  input(1): 36
+  input(2): 162
+  input(3): 282
+  input(4): 283
+  input(5): 284
+  input(6): 285
+  output(0): 163
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 286
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 286)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 287
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 287)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 288
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 288)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 289
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 289)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 290
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 290)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 163
+  input(1): 10
+  input(2): 161
+  input(3): 286
+  input(4): 287
+  input(5): 288
+  input(6): 289
+  input(7): 290
+  output(0): 160
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 291
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 291)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 292
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 292)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 293
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 293)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 294
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 294)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 160
+  input(1): 20
+  input(2): 165
+  input(3): 291
+  input(4): 292
+  input(5): 293
+  input(6): 294
+  output(0): 164
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 295
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 295)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: unknown(0), inputCount: 3, outputCount: 1)
+  input(0): 164
+  input(1): 152
+  input(2): 295
+  output(0): 159
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 296
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 296)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 297
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 297)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 298
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 298)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 299
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 299)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 159
+  input(1): 27
+  input(2): 169
+  input(3): 296
+  input(4): 297
+  input(5): 298
+  input(6): 299
+  output(0): 170
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 300
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 300)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 301
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 301)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 302
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 302)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 303
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 303)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 304
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 304)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 170
+  input(1): 7
+  input(2): 168
+  input(3): 300
+  input(4): 301
+  input(5): 302
+  input(6): 303
+  input(7): 304
+  output(0): 167
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 305
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 305)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 306
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 306)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 307
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 307)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 308
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 308)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 167
+  input(1): 51
+  input(2): 172
+  input(3): 305
+  input(4): 306
+  input(5): 307
+  input(6): 308
+  output(0): 171
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 309
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 309)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: unknown(0), inputCount: 3, outputCount: 1)
+  input(0): 171
+  input(1): 159
+  input(2): 309
+  output(0): 166
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 310
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 310)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 311
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 311)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 312
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 312)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 313
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 313)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 166
+  input(1): 17
+  input(2): 75
+  input(3): 310
+  input(4): 311
+  input(5): 312
+  input(6): 313
+  output(0): 76
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 314
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 314)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 315
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 315)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 316
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 316)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 317
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 317)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 318
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 318)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 76
+  input(1): 19
+  input(2): 74
+  input(3): 314
+  input(4): 315
+  input(5): 316
+  input(6): 317
+  input(7): 318
+  output(0): 73
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 319
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 319)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 320
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 320)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 321
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 321)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 322
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 322)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 73
+  input(1): 34
+  input(2): 78
+  input(3): 319
+  input(4): 320
+  input(5): 321
+  input(6): 322
+  output(0): 77
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 323
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 323)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 324
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 324)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 325
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 325)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 326
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 326)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 77
+  input(1): 13
+  input(2): 82
+  input(3): 323
+  input(4): 324
+  input(5): 325
+  input(6): 326
+  output(0): 83
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 327
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 327)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 328
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 328)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 329
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 329)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 330
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 330)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 331
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 331)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 83
+  input(1): 48
+  input(2): 81
+  input(3): 327
+  input(4): 328
+  input(5): 329
+  input(6): 330
+  input(7): 331
+  output(0): 80
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 332
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 332)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 333
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 333)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 334
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 334)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 335
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 335)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 80
+  input(1): 3
+  input(2): 85
+  input(3): 332
+  input(4): 333
+  input(5): 334
+  input(6): 335
+  output(0): 84
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 336
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 336)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: unknown(0), inputCount: 3, outputCount: 1)
+  input(0): 84
+  input(1): 77
+  input(2): 336
+  output(0): 79
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 337
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 337)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 338
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 338)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 339
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 339)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 340
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 340)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 79
+  input(1): 43
+  input(2): 89
+  input(3): 337
+  input(4): 338
+  input(5): 339
+  input(6): 340
+  output(0): 90
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 341
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 341)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 342
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 342)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 343
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 343)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 344
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 344)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 345
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 345)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 90
+  input(1): 24
+  input(2): 88
+  input(3): 341
+  input(4): 342
+  input(5): 343
+  input(6): 344
+  input(7): 345
+  output(0): 87
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 346
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 346)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 347
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 347)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 348
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 348)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 349
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 349)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 87
+  input(1): 42
+  input(2): 92
+  input(3): 346
+  input(4): 347
+  input(5): 348
+  input(6): 349
+  output(0): 91
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 350
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 350)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: unknown(0), inputCount: 3, outputCount: 1)
+  input(0): 91
+  input(1): 79
+  input(2): 350
+  output(0): 86
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 351
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 351)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 352
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 352)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 353
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 353)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 354
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 354)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 86
+  input(1): 4
+  input(2): 95
+  input(3): 351
+  input(4): 352
+  input(5): 353
+  input(6): 354
+  output(0): 96
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 355
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 355)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 356
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 356)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 357
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 357)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 358
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 358)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 359
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 359)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 96
+  input(1): 45
+  input(2): 94
+  input(3): 355
+  input(4): 356
+  input(5): 357
+  input(6): 358
+  input(7): 359
+  output(0): 93
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 360
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 360)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 361
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 361)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 362
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 362)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 363
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 363)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 93
+  input(1): 32
+  input(2): 98
+  input(3): 360
+  input(4): 361
+  input(5): 362
+  input(6): 363
+  output(0): 97
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 364
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 364)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 365
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 365)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 366
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 366)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 367
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 367)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 97
+  input(1): 21
+  input(2): 102
+  input(3): 364
+  input(4): 365
+  input(5): 366
+  input(6): 367
+  output(0): 103
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 368
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 368)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 369
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 369)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 370
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 370)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 371
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 371)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 372
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 372)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 103
+  input(1): 37
+  input(2): 101
+  input(3): 368
+  input(4): 369
+  input(5): 370
+  input(6): 371
+  input(7): 372
+  output(0): 100
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 373
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 373)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 374
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 374)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 375
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 375)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 376
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 376)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 100
+  input(1): 50
+  input(2): 105
+  input(3): 373
+  input(4): 374
+  input(5): 375
+  input(6): 376
+  output(0): 104
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 377
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 377)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: unknown(0), inputCount: 3, outputCount: 1)
+  input(0): 104
+  input(1): 97
+  input(2): 377
+  output(0): 99
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 378
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 378)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 379
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 379)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 380
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 380)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 381
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 381)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 99
+  input(1): 9
+  input(2): 109
+  input(3): 378
+  input(4): 379
+  input(5): 380
+  input(6): 381
+  output(0): 110
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 382
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 382)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 383
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 383)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 384
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 384)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 385
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 385)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 386
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 386)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 110
+  input(1): 8
+  input(2): 108
+  input(3): 382
+  input(4): 383
+  input(5): 384
+  input(6): 385
+  input(7): 386
+  output(0): 107
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 387
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 387)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 388
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 388)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 389
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 389)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 390
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 390)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 107
+  input(1): 40
+  input(2): 112
+  input(3): 387
+  input(4): 388
+  input(5): 389
+  input(6): 390
+  output(0): 111
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 391
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 391)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: unknown(0), inputCount: 3, outputCount: 1)
+  input(0): 111
+  input(1): 99
+  input(2): 391
+  output(0): 106
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 392
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 392)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 393
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 393)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 394
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 394)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 395
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 395)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 106
+  input(1): 44
+  input(2): 115
+  input(3): 392
+  input(4): 393
+  input(5): 394
+  input(6): 395
+  output(0): 116
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 396
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 396)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 397
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 397)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 398
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 398)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 399
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 399)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 400
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 400)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_DEPTHWISE_CONV_2D, inputCount: 8, outputCount: 1)
+  input(0): 116
+  input(1): 35
+  input(2): 114
+  input(3): 396
+  input(4): 397
+  input(5): 398
+  input(6): 399
+  input(7): 400
+  output(0): 113
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 401
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 401)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 402
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 402)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 403
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 403)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 404
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 404)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 113
+  input(1): 0
+  input(2): 118
+  input(3): 401
+  input(4): 402
+  input(5): 403
+  input(6): 404
+  output(0): 117
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 405
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 405)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 406
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 406)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 407
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 407)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 408
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 408)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 117
+  input(1): 46
+  input(2): 55
+  input(3): 405
+  input(4): 406
+  input(5): 407
+  input(6): 408
+  output(0): 56
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 409
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 409)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 410
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 410)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 411
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 411)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 412
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 412)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 413
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 413)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 414
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 414)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_AVERAGE_POOL_2D, inputCount: 7, outputCount: 1)
+  input(0): 56
+  input(1): 409
+  input(2): 410
+  input(3): 411
+  input(4): 412
+  input(5): 413
+  input(6): 414
+  output(0): 57
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 415
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 415)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 416
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 416)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 417
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 417)
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_INT32)
+  id: 418
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 418)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_CONV_2D, inputCount: 7, outputCount: 1)
+  input(0): 57
+  input(1): 26
+  input(2): 59
+  input(3): 415
+  input(4): 416
+  input(5): 417
+  input(6): 418
+  output(0): 58
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_RESHAPE, inputCount: 2, outputCount: 1)
+  input(0): 58
+  input(1): 61
+  output(0): 60
+ANeuralNetworksModel_addOperand(model: 0x2ab3ae0, type: ANEURALNETWORKS_FLOAT32)
+  id: 419
+  rank: 0
+ANeuralNetworksModel_setOperandValue(model: 0x2ab3ae0, index: 419)
+ANeuralNetworksModel_addOperation(model: 0x2ab3ae0, type: ANEURALNETWORKS_SOFTMAX, inputCount: 2, outputCount: 1)
+  input(0): 60
+  input(1): 419
+  output(0): 62
+nnapi function 'ANeuralNetworksModel_identifyInputsAndOutputs' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksModel_identifyInputsAndOutputs(model: 0x2ab3ae0)
+  input(0): 173
+  output(0): 62
+nnapi function 'ANeuralNetworksModel_finish' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksModel_finish(model: 0x2ab3ae0)
+nnapi function 'ANeuralNetworksCompilation_create' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksCompilation_create(model: 0x2ab3ae0) --> (compilation: 0x2ab4520)
+nnapi function 'ANeuralNetworksCompilation_finish' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksCompilation_finish(compilation: 0x2ab4520)
+input tensor indices = [173,]
+nnapi function 'ANeuralNetworksExecution_create' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksExecution_create(compilation: 0x2ab4520) --> (execution: 0x2ac0640)
+nnapi function 'ANeuralNetworksExecution_setInput' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksExecution_setInput(execution: 0x2ac0640, type: nullptr)
+nnapi function 'ANeuralNetworksExecution_setOutput' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksExecution_setOutput(execution: 0x2ac0640, type: nullptr)
+nnapi function 'ANeuralNetworksExecution_startCompute' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksExecution_startCompute(execution: 0x2ac0640) --> (event: 0x2ab4020)
+nnapi function 'ANeuralNetworksEvent_wait' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+nnapi function 'ANeuralNetworksEvent_free' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+nnapi function 'ANeuralNetworksExecution_free' is loaded from '/home/pem-mjs/nnfw/Product/obj/runtimes/logging/libneuralnetworks.so' 
+ANeuralNetworksExecution_free(execution: 0x2ac0640)
+output tensor indices = [62(max:0),]
+Prepare takes 0 seconds
+Invoke takes 0 seconds
+nnapi error: unable to open function ANeuralNetworksCompilation_free
+Aborted (core dumped)
