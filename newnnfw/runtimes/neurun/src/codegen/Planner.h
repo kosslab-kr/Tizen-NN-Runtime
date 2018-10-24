@@ -47,6 +47,7 @@ public:
 
 public:
   virtual void visit(const graph::operation::Conv2D::Implicit::Node &) override;
+  virtual void visit(const graph::operation::DepthwiseConv2D::Implicit::Node &) override;
   virtual void visit(const graph::operation::MaxPool2D::Implicit::Node &) override;
   virtual void visit(const graph::operation::AvgPool2D::Implicit::Node &) override;
   virtual void visit(const graph::operation::Concat::Node &) override;
