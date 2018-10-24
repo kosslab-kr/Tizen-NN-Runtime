@@ -62,6 +62,38 @@ void Planner::visit(const graph::operation::Conv2D::Implicit::Node &node)
   _builder.addStage(stage_gen->generate(node));
 }
 
+void Planner::visit(const graph::operation::DepthwiseConv2D::Implicit::Node &node)
+{
+  const auto ofm_index = node.getOutputs().at(0);
+
+  const auto ifm_index = node.getInputs().at(0);
+  const auto ker_index = node.getInputs().at(1);
+  const auto bias_index = node.getInputs().at(2);
+
+  const auto ofm_shape = _ctx.at(ofm_index).shape().asFeature();
+  const auto ifm_shape = _ctx.at(ifm_index).shape().asFeature();
+  const auto ker_shape = _ctx.at(ker_index).shape().asKernel();
+  const auto bias_size = _ctx.at(bias_index).shape().asVector();
+
+  // Set Shape Constraints
+  _builder.addShapeConstr(ofm_index, ::internal::asTensorInfo(ofm_shape));
+  _builder.addShapeConstr(ifm_index, ::internal::asTensorInfo(ifm_shape));
+  _builder.addShapeConstr(ker_index, ::internal::asTensorInfo(ker_shape));
+  _builder.addShapeConstr(bias_index, ::internal::asTensorInfo(bias_size));
+
+  // backend
+  auto backend = node.lower_info()->backend();
+
+  // Generate Initializers
+  auto init_gen = backend.initializer_gen();
+  _builder.addInitializer(ker_index, init_gen->generateWeight(node));
+  _builder.addInitializer(bias_index, init_gen->generateBias(node));
+
+  // Generate Stage
+  auto stage_gen = backend.stage_gen();
+  _builder.addStage(stage_gen->generate(node));
+}
+
 void Planner::visit(const graph::operation::MaxPool2D::Implicit::Node &node)
 {
   const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)};
