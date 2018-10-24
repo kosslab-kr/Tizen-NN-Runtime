@@ -29,6 +29,7 @@
 #include "graph/operation/AvgPool2D.h"
 #include "graph/operation/Concat.h"
 #include "graph/operation/Conv2D.h"
+#include "graph/operation/DepthwiseConv2D.h"
 #include "graph/operation/FullyConnected.h"
 #include "graph/operation/MaxPool2D.h"
 #include "graph/operation/Reshape.h"
