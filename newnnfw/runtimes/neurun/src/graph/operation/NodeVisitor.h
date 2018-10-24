@@ -18,6 +18,7 @@
 #define __NEURUN_GRAPH_OPERATION_NODE_VISITOR_H__
 
 #include "Conv2D.h"
+#include "DepthwiseConv2D.h"
 #include "MaxPool2D.h"
 #include "AvgPool2D.h"
 #include "Concat.h"
@@ -39,6 +40,7 @@ struct NodeVisitor
   virtual ~NodeVisitor() = default;
 
   virtual void visit(const Conv2D::Implicit::Node &) = 0;
+  virtual void visit(const DepthwiseConv2D::Implicit::Node &) = 0;
   virtual void visit(const MaxPool2D::Implicit::Node &) = 0;
   virtual void visit(const AvgPool2D::Implicit::Node &) = 0;
   virtual void visit(const Concat::Node &) = 0;
