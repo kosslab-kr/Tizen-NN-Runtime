@@ -362,6 +362,27 @@ int ANeuralNetworksModel_addOperation(ANeuralNetworksModel *model,
 
       break;
     }
+    case ANEURALNETWORKS_DEPTHWISE_CONV_2D:
+    {
+      // inputCount is either 8 or 11 according to NN API specification.
+      //  - Padding is implicit when inputCount is 8
+      //  - Padding is explicit when inputCount is 11
+      assert(inputCount == 8 || inputCount == 11);
+      assert(outputCount == 1);
+
+      if (inputCount == 8)
+      {
+        using GraphNode = neurun::graph::operation::DepthwiseConv2D::Implicit::Node;
+        printf("[DEBUG] ADDOPERATION DEPTHWISE_CONV_2D FROM NEURUN\n");
+        graph.addOperation(nnfw::make_unique<GraphNode>(node_param));
+      }
+      else
+      {
+        throw std::runtime_error{"Explicit padding in Conv2D is not supported, yet"};
+      }
+
+      break;
+    }
     default:
       throw std::runtime_error{"Not supported operation"};
   };
