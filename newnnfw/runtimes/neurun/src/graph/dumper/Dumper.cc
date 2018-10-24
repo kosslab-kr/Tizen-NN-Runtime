@@ -38,6 +38,15 @@ void Dumper::visit(const Conv2D::Implicit::Node &node)
   VERBOSE(LIR) << "  - Output : OFM(" << node.getOutputs().at(0).value() << ")" << std::endl;
 }
 
+void Dumper::visit(const DepthwiseConv2D::Implicit::Node &node)
+{
+  VERBOSE(LIR) << "* DepthwiseConv2D(Implicit)" << std::endl;
+  VERBOSE(LIR) << "  - Inputs : IFM(" << node.getInputs().at(0).value() << ") Kernel("
+               << node.getInputs().at(1).value() << ") Bias(" << node.getInputs().at(2).value()
+               << ")" << std::endl;
+  VERBOSE(LIR) << "  - Output : OFM(" << node.getOutputs().at(0).value() << ")" << std::endl;
+}
+
 void Dumper::visit(const MaxPool2D::Implicit::Node &node)
 {
   VERBOSE(LIR) << "* MaxPool2D(Implicit)" << std::endl;

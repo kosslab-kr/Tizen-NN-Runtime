@@ -33,6 +33,7 @@ public:
 
 public:
   void visit(const graph::operation::Conv2D::Implicit::Node &node) override;
+  void visit(const graph::operation::DepthwiseConv2D::Implicit::Node &node) override;
   void visit(const graph::operation::MaxPool2D::Implicit::Node &node) override;
   void visit(const graph::operation::AvgPool2D::Implicit::Node &node) override;
   void visit(const graph::operation::Concat::Node &node) override;
