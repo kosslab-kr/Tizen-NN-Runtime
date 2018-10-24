@@ -22,6 +22,7 @@
 
 // Internal Name       | NN API Name
 OP(Conv2D::Implicit    , CONV_2D)
+OP(DepthwiseConv2D::Implicit , DEPTHWISE_CONV_2D)
 OP(AvgPool2D::Implicit , AVERAGE_POOL_2D)
 OP(MaxPool2D::Implicit , MAX_POOL_2D)
 OP(Concat              , CONCATENATION)
