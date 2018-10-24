@@ -21,6 +21,7 @@
 #include "internal/Padding.h"
 #include "kernel/cpu/OperationUtils.h"
 #include "kernel/cpu/ConvolutionLayer.h"
+//#include "kernel/cpu/DepthwiseConvolutionalLayer.h"
 #include "kernel/cpu/AvgPoolLayer.h"
 #include "kernel/cpu/MaxPoolLayer.h"
 #include "kernel/cpu/ConcatLayer.h"
@@ -132,6 +133,104 @@ Stage StageGenerator::generate(const graph::operation::Conv2D::Implicit::Node &n
     builder.append(std::move(fn));
   };
 }
+
+/*
+Stage StageGenerator::generate(const graph::operation::DepthwiseConv2D::Implicit::Node &node)
+{
+  printf("[DEBUG] STAGEGENERATOR DEPTHWISECONV2D START(CPU)");
+  printf("[DEBUG] DEPTHWISECONV2D CPU NOT YET IMPLEMENTED");
+  
+  const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)};
+  const ::neurun::graph::operand::Index ifm_index{node.getInputs().at(0)};
+  const ::neurun::graph::operand::Index ker_index{node.getInputs().at(1)};
+  const ::neurun::graph::operand::Index bias_index{node.getInputs().at(2)};
+
+  const ::neurun::graph::operand::Index vstride_index{node.param().vstride_index};
+  const ::neurun::graph::operand::Index hstride_index{node.param().hstride_index};
+
+  const ::neurun::graph::operand::Index padding_index{node.param().padding_index};
+  const ::neurun::graph::operand::Index multipler_index{node.param().multipler_index};
+  const ::neurun::graph::operand::Index activation_index{node.param().activation_index};
+
+  auto multiplier = _ctx.at(multipler_index).asScalar<int>();
+
+  const PaddingCode padding_type =
+      static_cast<PaddingCode>(_ctx.at(padding_index).asScalar<int32_t>());
+
+  assert((ANEURALNETWORKS_PADDING_SAME == padding_type) ||
+         (ANEURALNETWORKS_PADDING_VALID == padding_type));
+
+  ::internal::Stride stride;
+
+  stride.vertical = _ctx.at(vstride_index).asScalar<int32_t>();
+  stride.horizontal = _ctx.at(hstride_index).asScalar<int32_t>();
+
+  // Construct operation parameters
+  struct Param
+  {
+    int ofm_index;
+    int ifm_index;
+    int ker_index;
+    int bias_index;
+
+    ::neurun::kernel::cpu::Shape ofm_shape;
+    ::neurun::kernel::cpu::Shape ifm_shape;
+    ::neurun::kernel::cpu::Shape ker_shape;
+    ::neurun::kernel::cpu::Shape bias_shape;
+
+    ::internal::Padding padding;
+    ::internal::Stride stride;
+
+    //TODO: MAKE runtimes/neurun/src/kernel/cpu/DepthwiseConvolutionLayer.h
+    ::neurun::kernel::cpu::Shape multipler;
+    FuseCode activation;
+  };
+
+  Param param;
+
+  param.ofm_index = ofm_index.asInt();
+  param.ifm_index = ifm_index.asInt();
+  param.ker_index = ker_index.asInt();
+  param.bias_index = bias_index.asInt();
+
+  param.ofm_shape = ::neurun::kernel::cpu::getShape(_ctx.at(ofm_index));
+  param.ifm_shape = ::neurun::kernel::cpu::getShape(_ctx.at(ifm_index));
+  param.ker_shape = ::neurun::kernel::cpu::getShape(_ctx.at(ker_index));
+  param.bias_shape = ::neurun::kernel::cpu::getShape(_ctx.at(bias_index));
+
+  param.stride = stride;
+  param.padding = (padding_type == ANEURALNETWORKS_PADDING_SAME)
+                      ? ::internal::same_padding(_ctx.at(ifm_index).shape().asFeature(),
+                                                 _ctx.at(ofm_index).shape().asFeature(), stride,
+                                                 _ctx.at(ker_index).shape().asKernel().W,
+                                                 _ctx.at(ker_index).shape().asKernel().H)
+                      : ::internal::valid_padding();
+  
+  param.multipler = multiplier;
+  param.activation = static_cast<FuseCode>(_ctx.at(activation_index).asScalar<int32_t>());
+
+  auto tensors = _tensor_builder;
+
+  return [tensors, param](IExecutionBuilder &builder) {
+    auto ofm_alloc = tensors->at(::neurun::graph::operand::Index{param.ofm_index});
+    auto ifm_alloc = tensors->at(::neurun::graph::operand::Index{param.ifm_index});
+    auto ker_alloc = tensors->at(::neurun::graph::operand::Index{param.ker_index});
+    auto bias_alloc = tensors->at(::neurun::graph::operand::Index{param.bias_index});
+
+    std::unique_ptr<::neurun::kernel::cpu::DepthwiseConvolutionLayer> fn{
+        new ::neurun::kernel::cpu::DepthwiseConvolutionLayer};
+
+    //TODO: add parameter multipler
+    fn->configure(ifm_alloc->buffer(), param.ifm_shape, ker_alloc->buffer(), param.ker_shape,
+                  bias_alloc->buffer(), param.bias_shape, param.padding.left, param.padding.right,
+                  param.padding.top, param.padding.bottom, param.stride.horizontal,
+                  param.stride.vertical, param.activation, ofm_alloc->buffer(), param.ofm_shape);
+
+    builder.append(std::move(fn));
+  };
+  
+}
+*/
 
 Stage StageGenerator::generate(const graph::operation::MaxPool2D::Implicit::Node &node)
 {

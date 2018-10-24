@@ -39,6 +39,7 @@ public:
   virtual std::shared_ptr<ITensorBuilder> tensor_builder() override { return _tensor_builder; }
 
   virtual Stage generate(const graph::operation::Conv2D::Implicit::Node &node) override;
+  //virtual Stage generate(const graph::operation::DepthwiseConv2D::Implicit::Node &node) override;
   virtual Stage generate(const graph::operation::MaxPool2D::Implicit::Node &node) override;
   virtual Stage generate(const graph::operation::AvgPool2D::Implicit::Node &node) override;
   virtual Stage generate(const graph::operation::Concat::Node &node) override;
