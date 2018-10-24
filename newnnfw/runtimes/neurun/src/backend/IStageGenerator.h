@@ -24,6 +24,7 @@
 
 #include "backend/ITensorBuilder.h"
 #include "graph/operation/Conv2D.h"
+#include "graph/operation/DepthwiseConv2D.h"
 #include "graph/operation/MaxPool2D.h"
 #include "graph/operation/AvgPool2D.h"
 #include "graph/operation/Concat.h"
@@ -53,6 +54,7 @@ struct IStageGenerator
   virtual std::shared_ptr<ITensorBuilder> tensor_builder() = 0;
 
   virtual Stage generate(const graph::operation::Conv2D::Implicit::Node &node) = 0;
+  virtual Stage generate(const graph::operation::DepthwiseConv2D::Implicit::Node &node) = 0;
   virtual Stage generate(const graph::operation::MaxPool2D::Implicit::Node &node) = 0;
   virtual Stage generate(const graph::operation::AvgPool2D::Implicit::Node &node) = 0;
   virtual Stage generate(const graph::operation::Concat::Node &node) = 0;

@@ -197,6 +197,91 @@ Stage StageGenerator::generate(const graph::operation::Conv2D::Implicit::Node &n
   };
 }
 
+Stage StageGenerator::generate(const graph::operation::DepthwiseConv2D::Implicit::Node &node)
+{
+  printf("[DEBUG] STAGEGENERATOR DEPTHWISECONV2D START");
+  const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)};
+  const ::neurun::graph::operand::Index ifm_index{node.getInputs().at(0)};
+  const ::neurun::graph::operand::Index ker_index{node.getInputs().at(1)};
+  const ::neurun::graph::operand::Index bias_index{node.getInputs().at(2)};
+
+  const ::neurun::graph::operand::Index vstride_index{node.param().vstride_index};
+  const ::neurun::graph::operand::Index hstride_index{node.param().hstride_index};
+
+  const ::neurun::graph::operand::Index padding_index{node.param().padding_index};
+  const ::neurun::graph::operand::Index multipler_index{node.param().multipler_index};
+  const ::neurun::graph::operand::Index activation_index{node.param().activation_index};
+
+  const auto ofm_shape = _ctx.at(ofm_index).shape().asFeature();
+  const auto ifm_shape = _ctx.at(ifm_index).shape().asFeature();
+  const auto ker_shape = _ctx.at(ker_index).shape().asKernel();
+  //BIAS_SHAPE?
+
+  auto multiplier = _ctx.at(multipler_index).asScalar<int>();
+
+  const PaddingCode padding_type =
+      static_cast<PaddingCode>(_ctx.at(padding_index).asScalar<int32_t>());
+
+  assert((ANEURALNETWORKS_PADDING_SAME == padding_type) ||
+         (ANEURALNETWORKS_PADDING_VALID == padding_type));
+
+  ::internal::Stride stride;
+
+  stride.vertical = _ctx.at(vstride_index).asScalar<int32_t>();
+  stride.horizontal = _ctx.at(hstride_index).asScalar<int32_t>();
+
+  // Construct operation parameters
+  struct Param
+  {
+    int ofm_index;
+    int ifm_index;
+    int ker_index;
+    int bias_index;
+
+    ::internal::Padding padding;
+    ::internal::Stride stride;
+
+    int multipler;
+    FuseCode activation;
+  };
+
+  Param param;
+
+  param.ofm_index = ofm_index.asInt();
+  param.ifm_index = ifm_index.asInt();
+  param.ker_index = ker_index.asInt();
+  param.bias_index = bias_index.asInt();
+
+  param.stride = stride;
+  param.padding =
+      (padding_type == ANEURALNETWORKS_PADDING_SAME)
+          ? ::internal::same_padding(ifm_shape, ofm_shape, stride, ker_shape.W, ker_shape.H)
+          : ::internal::valid_padding();
+
+  param.multipler = multiplier;
+  param.activation = static_cast<FuseCode>(_ctx.at(activation_index).asScalar<int32_t>());
+
+  auto tensors = _tensor_builder;
+
+  return [tensors, param](IExecutionBuilder &builder) {
+    auto ofm_alloc = tensors->at(::neurun::graph::operand::Index{param.ofm_index}).get();
+    auto ifm_alloc = tensors->at(::neurun::graph::operand::Index{param.ifm_index}).get();
+    auto ker_alloc = tensors->at(::neurun::graph::operand::Index{param.ker_index}).get();
+    auto bias_alloc = tensors->at(::neurun::graph::operand::Index{param.bias_index}).get();
+
+    const auto conv_info = asPadStringInfo(param.padding, param.stride);
+
+    std::unique_ptr<::arm_compute::CLDepthwiseConvolutionLayer> fn{new ::arm_compute::CLDepthwiseConvolutionLayer};
+
+    fn->configure(ifm_alloc, ker_alloc, bias_alloc, ofm_alloc, conv_info, param.multipler);
+
+    builder.append(std::move(fn));
+
+    ActivationBuilder{builder}.append(param.activation, ofm_alloc);
+  };
+}
+
+
 Stage StageGenerator::generate(const graph::operation::MaxPool2D::Implicit::Node &node)
 {
   const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)};
