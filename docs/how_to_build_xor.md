@@ -16,5 +16,6 @@
      (conflict error 발생 시 --force 옵션 추가: rpm -Uvh org.tizen.Xor-0.0.1-1.armv7l.rpm --force)
 * Test
   * xorGate.lite와 같은 경로에서 실행
+  * xorGate.lite 파일 다운로드 : https://github.com/rdeepc/Tensorflow_lite_tutorial
   * test
     * ![test_xor](./fig/test_xor.png)
