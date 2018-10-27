@@ -1,0 +1,5 @@
+- nnfw neuron operation 추가
+  - relu : graph operation 소스 추가
+  - DepthwiseConv2D : çpu mode 제외한 부분 작성
+- gcc, vim dependencies 패키지 목록 작성
+- webcam 애플리케이션의 tflite 모델이 부르는 NN API 탐색
