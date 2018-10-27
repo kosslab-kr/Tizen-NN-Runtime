@@ -1,0 +1,2 @@
+- GBS 빌드, tensorflow lite 설치 관련 문서 작성
+- 회의록 작성
