@@ -525,6 +525,60 @@ Stage StageGenerator::generate(const graph::operation::Softmax::Node &node)
   };
 }
 
+Stage StageGenerator::generate(const graph::operation::Add::Node &node)
+{
+  VERBOSE(FullyConnected) << "generate CPU Add" << std::endl;
+
+  const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)};
+  const ::neurun::graph::operand::Index lhs_index{node.getInputs().at(0)};
+  const ::neurun::graph::operand::Index rhs_index{node.getInputs().at(1)};
+  const ::neurun::graph::operand::Index activation_index{node.param().activation_index};
+
+  // Construct operation parameters
+  struct Param
+  {
+    int ofm_index;
+    int input_index;
+    int weight_index;
+    int bias_index;
+
+    ::neurun::kernel::cpu::Shape ofm_shape;
+    ::neurun::kernel::cpu::Shape lhs_shape;
+    ::neurun::kernel::cpu::Shape rhs_shape;
+
+    FuseCode activation;
+  };
+
+  Param param;
+
+  param.ofm_index = ofm_index.asInt();
+  param.lhs_index = lhs_index.asInt();
+  param.rhs_index = rhs_index.asInt();
+
+  param.ofm_shape = ::neurun::kernel::cpu::getShape(_ctx.at(output_index));
+  param.lhs_shape = ::neurun::kernel::cpu::getShape(_ctx.at(lhs_index));
+  param.rhs_shape = ::neurun::kernel::cpu::getShape(_ctx.at(rhs_index));
+
+  param.activation = static_cast<FuseCode>(_ctx.at(activation_index).asScalar<int32_t>());
+
+  auto tensors = _tensor_builder;
+
+  return [tensors, param](IExecutionBuilder &builder) {
+    auto ofm_alloc = tensors->at(::neurun::graph::operand::Index{param.ofm_index}).get();
+    auto lhs_alloc = tensors->at(::neurun::graph::operand::Index{param.lhs_index}).get();
+    auto rhs_alloc = tensors->at(::neurun::graph::operand::Index{param.rhs_index}).get();
+
+    std::unique_ptr<::neurun::kernel::cpu::AddLayer> fn{
+        new ::neurun::kernel::cpu::AddLayer};
+
+    fn->configure(lhs_alloc->buffer(), param.lhs_shape, rhs_alloc->buffer(),
+                  param.rhs_shape, param.activation,
+                  ofm_alloc->buffer(), param.ofm_shape);
+
+    builder.append(std::move(fn));
+  };
+}
+
 Stage StageGenerator::generate(const graph::operation::NOP::Node & /* node */)
 {
   // DO NOTHING
