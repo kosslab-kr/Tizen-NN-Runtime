@@ -26,6 +26,7 @@
 #include "Softmax.h"
 #include "NOP.h"
 #include "Permute.h"
+#include "Add.h"
 
 namespace neurun
 {
@@ -47,6 +48,7 @@ struct NodeVisitor
   virtual void visit(const Softmax::Node &) = 0;
   virtual void visit(const NOP::Node &) = 0;
   virtual void visit(const Permute::Node &) = 0;
+  virtual void visit(const Add::Node &) = 0;
 };
 
 } // namespace operation
