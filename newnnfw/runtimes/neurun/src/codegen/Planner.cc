@@ -247,6 +247,39 @@ void Planner::visit(const graph::operation::NOP::Node & /* node */)
   // TODO : It's just for graph manipulation test now, it should be added tensor copy stage later.
 }
 
+void Planner::visit(const graph::operation::Add::Implicit::Node &)
+{
+  const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)};
+
+  const ::neurun::graph::operand::Index lhs_index{node.getInputs().at(0)};
+  const ::neurun::graph::operand::Index rhs_index{node.getInputs().at(1)};
+
+  const ::neurun::graph::operand::Index activation_index{node.param().activation_index};
+
+  assert(_ctx.at(lhs_index).shape().rank() == _ctx.at(rhs_index).shape().rank())
+  assert(_ctx.at(lhs_index).shape().rank() == _ctx.at(output_index).shape().rank())
+
+  assert(_ctx.at(lhs_index).shape().dim(0) == _ctx.at(rhs_index).shape().dim(0));
+  assert(_ctx.at(lhs_index).shape().dim(1) == _ctx.at(output_index).shape().dim(1));
+
+  const auto ofm_shape = _ctx.at(ofm_index).shape().asTensor();
+  const auto lhs_index = _ctx.at(lhs_index).shape().asTensor();
+  const auto rhs_index = _ctx.at(rhs_index).shape().asTensor();
+  
+  // Set Shape Constraints
+  _builder.addShapeConstr(lhs_index, ::internal::asTensorInfo(lhs_shape));
+  _builder.addShapeConstr(rhs_index, ::internal::asTensorInfo(rhs_shape));
+  _builder.addShapeConstr(ofm_index, ::internal::asTensorInfo(ofm_shape));
+  
+
+  // backend
+  auto backend = node.lower_info()->backend();
+
+  // Generate Stage
+  auto stage_gen = backend.stage_gen();
+  _builder.addStage(stage_gen->generate(node));
+}
+
 void Planner::visit(const graph::operation::Permute::Node & /* node */) { throw "NYI"; }
 
 } // namespace codegen
