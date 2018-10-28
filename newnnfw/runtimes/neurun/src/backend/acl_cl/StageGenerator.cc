@@ -527,6 +527,50 @@ Stage StageGenerator::generate(const graph::operation::Softmax::Node &node)
   };
 }
 
+Stage StageGenerator::generate(const graph::operation::Add::Node &node)
+{
+  const ::neurun::graph::operand::Index ofm_index{node.getOutputs().at(0)}
+  const ::neurun::graph::operand::Index lhs_index{node.getInputs().at(0)}
+  const ::neurun::graph::operand::Index rhs_index{node.getInputs().at(1)}
+  const ::neurun::graph::operand::Index activation_index{node.param().activation_index};
+
+  struct Param
+  {
+    int ofm_index;
+
+    int lhs_index;
+    int rhs_index;
+
+    FuseCode activation;
+  };
+
+  Param param;
+
+  param.output_index = ofm_index.asInt();
+  param.lhs_index = lhs_index.asInt();
+  param.rhs_index = rhs_index.asInt();
+
+  param.activation = static_cast<FuseCode>(_ctx.at(activation_index).asScalar<int32_t>());
+
+  auto tensors = _tensor_builder;
+
+  return [tensors, param](IExecutionBuilder &builder) {
+    auto ofm_alloc = tensors->at(::neurun::graph::operand::Index{param.ofm_index}).get();
+    auto lhs_alloc = tensors->at(::neurun::graph::operand::Index{param.lhs_index}).get();
+    auto rhs_alloc = tensors->at(::neurun::graph::operand::Index{param.rhs_index}).get();
+
+    auto fn = make_layer<::arm_compute::CLAddLayer>();
+
+    fn->configure(lhs_alloc, rhs_alloc, ofm_alloc);
+
+    builder.append(std::move(fn));
+
+    ActivationBuilder{builder}.append(param.activation, ofm_alloc);
+  };
+}
+}
+
+
 Stage StageGenerator::generate(const graph::operation::NOP::Node & /* node */)
 {
   // DO NOTHING

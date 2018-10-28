@@ -45,6 +45,7 @@ public:
   virtual Stage generate(const graph::operation::Reshape::Node &node) override;
   virtual Stage generate(const graph::operation::Softmax::Node &node) override;
   virtual Stage generate(const graph::operation::NOP::Node &node) override;
+  virtual Stage generate(const graph::operation::Add::Node &node) override;
 
 private:
   const neurun::graph::operand::Set &_ctx;
