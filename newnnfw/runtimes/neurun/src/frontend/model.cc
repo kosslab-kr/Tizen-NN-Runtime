@@ -33,6 +33,7 @@
 #include "graph/operation/MaxPool2D.h"
 #include "graph/operation/Reshape.h"
 #include "graph/operation/Softmax.h"
+#include "graph/operation/Add.h"
 
 int ANeuralNetworksModel_create(ANeuralNetworksModel **model)
 {
@@ -323,6 +324,14 @@ int ANeuralNetworksModel_addOperation(ANeuralNetworksModel *model,
     case ANEURALNETWORKS_SOFTMAX:
     {
       using GraphNode = neurun::graph::operation::Softmax::Node;
+
+      graph.addOperation(nnfw::make_unique<GraphNode>(node_param));
+
+      break;
+    }
+    case ANEURALNETWORKS_ADD:
+    {
+      using GraphNode = neurun::graph::operation::Add::Node;
 
       graph.addOperation(nnfw::make_unique<GraphNode>(node_param));
 
