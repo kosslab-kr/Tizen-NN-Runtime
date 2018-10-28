@@ -113,6 +113,13 @@ void Dumper::visit(const Permute::Node &node)
   VERBOSE(LIR) << "  - Output : OFM(" << node.getOutputs().at(0).value() << ")" << std::endl;
 }
 
+void Dumper::visit(const Add::Node &node)
+{
+  VERBOSE(LIR) << "* Add" << std::endl;
+  VERBOSE(LIR) << "  - Inputs : LHS(" << node.getInputs().at(0).value() << ") RHS(" << node.getInputs().at(1).value() << ")" << std::endl;
+  VERBOSE(LIR) << "  - Outputs : OFM(" << node.getOutputs().at(0).value() << ")" << std::endl;
+}
+
 } // namespace dumper
 } // namespace graph
 } // namespace neurun

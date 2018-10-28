@@ -41,6 +41,8 @@ public:
   void visit(const graph::operation::Softmax::Node &node) override;
   void visit(const graph::operation::NOP::Node &node) override;
   void visit(const graph::operation::Permute::Node &node) override;
+  void visit(const graph::operation::Add::Node &node) override;
+
 };
 
 } // namespace dumper
