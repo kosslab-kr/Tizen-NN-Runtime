@@ -31,6 +31,7 @@
 #include "graph/operation/Reshape.h"
 #include "graph/operation/Softmax.h"
 #include "graph/operation/NOP.h"
+#include "graph/operation/Add.h"
 
 struct IExecutionBuilder
 {
@@ -60,6 +61,7 @@ struct IStageGenerator
   virtual Stage generate(const graph::operation::Reshape::Node &node) = 0;
   virtual Stage generate(const graph::operation::Softmax::Node &node) = 0;
   virtual Stage generate(const graph::operation::NOP::Node &node) = 0;
+  virtual Stage generate(const graph::operation::Add::Node &node) = 0;
 };
 
 } // namespace backend
