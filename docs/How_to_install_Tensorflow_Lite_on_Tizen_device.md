@@ -51,7 +51,7 @@ $ git clone https://review.tizen.org/gerrit/#/admin/projects/platform/upstream/t
 2. rpm 폴더 이동
 
    ```
-   $ cd ~/GBS-ROOT/local/repos/unified_standard/armv7l/SRPMS
+   $ cd ~/GBS-ROOT/local/repos/unified_standard/armv7l/RPMS
    ```
 
 3. rpm 파일을 Tizen 디바이스에 설치
