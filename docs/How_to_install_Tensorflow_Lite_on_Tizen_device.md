@@ -37,7 +37,7 @@ $ git clone https://review.tizen.org/gerrit/#/admin/projects/platform/upstream/t
 2. rpm 파일 확인하기
 
    ```
-   $ ll ~/GBS_ROOT/local/repos/unified_standard/armv7l/SRPMS/
+   $ ll ~/GBS_ROOT/local/repos/unified_standard/armv7l/RPMS/
    ```
 
 #### rpm 파일 디바이스 설치
